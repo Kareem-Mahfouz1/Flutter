@@ -1,7 +1,8 @@
-import 'constants.dart';
-import 'features/splash/presentation/views/splashview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'constants.dart';
+import 'features/splash/presentation/views/splashview.dart';
 
 void main() {
   runApp(const Bookly());
