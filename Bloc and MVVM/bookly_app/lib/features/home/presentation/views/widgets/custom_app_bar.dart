@@ -12,7 +12,9 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       minimum: const EdgeInsets.symmetric(
-          vertical: 40, horizontal: kHorizontalPadding),
+        vertical: 40,
+        horizontal: kHorizontalPadding,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
