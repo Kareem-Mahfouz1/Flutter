@@ -34,7 +34,10 @@ class HomeViewBody extends StatelessWidget {
           ),
         ];
       },
-      body: const BestSellerListView(),
+      body: const Padding(
+        padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+        child: BestSellerListView(),
+      ),
     );
   }
 }
