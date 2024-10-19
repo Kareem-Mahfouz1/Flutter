@@ -1,9 +1,8 @@
-import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/features/home/presentation/views/widgets/vertical_list_view_item.dart';
-import 'package:bookly_app/features/search/presentation/views/widgets/custom_search_text_field.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../home/presentation/views/widgets/vertical_list_view_item.dart';
+import 'custom_search_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});

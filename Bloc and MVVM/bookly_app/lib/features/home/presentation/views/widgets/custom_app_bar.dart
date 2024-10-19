@@ -1,5 +1,5 @@
-import 'package:bookly_app/constants.dart';
-import 'package:bookly_app/core/utils/app_router.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/assets.dart';
