@@ -36,6 +36,7 @@ class ServerFailure extends Failure {
             'Oops, there was an error. Please try again later');
     }
   }
+
   factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     switch (statusCode) {
       case 400:
