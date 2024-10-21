@@ -33,7 +33,7 @@ class ServerFailure extends Failure {
         }
       default:
         return ServerFailure(
-            'Oops, there was an error. Please try again later');
+            'Oops, there was an error. Please try again later 1');
     }
   }
 
@@ -46,11 +46,14 @@ class ServerFailure extends Failure {
       case 404:
         return ServerFailure(
             'Your request is not found,please try again later!');
+      case 429:
+        return ServerFailure(
+            'Too many request,Daily quota limit reached,Please com back tomorrow');
       case 500:
         return ServerFailure('internal server error,please try again later!');
       default:
         return ServerFailure(
-            'Oops, there was an error. Please try again later');
+            'Oops, there was an error. Please try again later 2');
     }
   }
 }

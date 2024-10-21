@@ -14,7 +14,10 @@ class BookDetailsSetion extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const CustomBookItem(),
+          child: const CustomBookItem(
+            imageUrl:
+                'https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg',
+          ),
         ),
         const SizedBox(height: 35),
         Text(
