@@ -1,6 +1,5 @@
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../../../home/presentation/views/widgets/vertical_list_view_item.dart';
 import 'custom_search_text_field.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +38,8 @@ class SearchResultsListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
-          child: VirticalListViewItem(),
+          // child: VirticalListViewItem(),
+          child: Text('data'),
         );
       },
     );

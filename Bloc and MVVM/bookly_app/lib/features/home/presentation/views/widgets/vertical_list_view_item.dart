@@ -1,3 +1,8 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/assets.dart';
 import '../../../../../core/utils/styles.dart';
@@ -6,7 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class VirticalListViewItem extends StatelessWidget {
-  const VirticalListViewItem({super.key});
+  const VirticalListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +24,7 @@ class VirticalListViewItem extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 0.64,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(
-                      MyAssets.testCover2,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            CustomBookItem(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
             const SizedBox(width: 30),
             Expanded(
               child: Column(
@@ -39,8 +32,8 @@ class VirticalListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
-                    child: const Text(
-                      'Harry Potter and the Goblet of Fire',
+                    child: Text(
+                      bookModel.volumeInfo.title!,
                       style: Styles.gentiumBookPlus20,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -49,16 +42,18 @@ class VirticalListViewItem extends StatelessWidget {
                   Opacity(
                     opacity: 0.7,
                     child: Text(
-                      'J.K. Rowling',
+                      bookModel.volumeInfo.authors!.join(' / '),
                       style: Styles.textStyle14
                           .copyWith(fontWeight: FontWeight.w500),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Row(
                     children: [
                       Text(
-                        '19.99 €',
+                        'Free',
                         style: Styles.textStyle20,
                       ),
                       Spacer(),
