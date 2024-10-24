@@ -1,3 +1,5 @@
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'books_action.dart';
@@ -5,7 +7,8 @@ import 'custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSetion extends StatelessWidget {
-  const BookDetailsSetion({super.key});
+  const BookDetailsSetion({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -14,26 +17,27 @@ class BookDetailsSetion extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const CustomBookItem(
-            imageUrl:
-                'https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg',
+          child: CustomBookItem(
+            imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
           ),
         ),
         const SizedBox(height: 35),
         Text(
-          'The Jungle Book',
+          bookModel.volumeInfo.title!,
           style: Styles.gentiumBookPlus20.copyWith(
             fontSize: 30,
           ),
+          textAlign: TextAlign.center,
         ),
         Opacity(
           opacity: .7,
           child: Text(
-            'Rudyard Kipling',
+            bookModel.volumeInfo.authors!.join('\n'),
             style: Styles.textStyle18.copyWith(
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
         const SizedBox(height: 18),
