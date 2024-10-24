@@ -1,5 +1,3 @@
-import 'package:bookly_app/features/home/presentation/views/widgets/vertical_list_view_item.dart';
-
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_search_text_field.dart';
