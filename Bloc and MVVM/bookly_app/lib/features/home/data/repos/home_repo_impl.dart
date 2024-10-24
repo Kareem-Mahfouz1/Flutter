@@ -8,13 +8,34 @@ import 'package:dio/dio.dart';
 class HomeRepoImpl implements HomeRepo {
   final ApiService apiService;
 
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+    try {
+      var data = await apiService.get(
+        endPoint:
+            'volumes?Filtering=free_ebooks&q=subject:cooking&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
+      );
+
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return Right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioException(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
   HomeRepoImpl(this.apiService);
   @override
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?Filtering=free_ebooks&Sorting=Newest&q=subject:cooking&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
+            'volumes?Filtering=free_ebooks&Sorting=Newest&q=subject:programming&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
       );
 
       List<BookModel> books = [];
@@ -31,11 +52,12 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?Filtering=free_ebooks&q=subject:cooking&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
+            'volumes?Filtering=free_ebooks&q=$category&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
       );
 
       List<BookModel> books = [];

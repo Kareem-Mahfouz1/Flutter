@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'vertical_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
+class VerticalBooksListView extends StatelessWidget {
+  const VerticalBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {

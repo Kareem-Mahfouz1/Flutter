@@ -8,7 +8,7 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: SafeArea(
-        minimum: EdgeInsets.only(top: 40),
+        minimum: EdgeInsets.only(top: 60),
         child: SearchViewBody(),
       ),
     );
