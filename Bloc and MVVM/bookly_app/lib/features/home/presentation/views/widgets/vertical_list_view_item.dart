@@ -23,7 +23,10 @@ class VirticalListViewItem extends StatelessWidget {
         height: 120,
         child: Row(
           children: [
-            CustomBookItem(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            Hero(
+                tag: bookModel.volumeInfo.title!,
+                child: CustomBookItem(
+                    imageUrl: bookModel.volumeInfo.imageLinks.thumbnail)),
             const SizedBox(width: 30),
             Expanded(
               child: Column(

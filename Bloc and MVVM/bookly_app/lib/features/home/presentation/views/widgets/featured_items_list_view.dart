@@ -29,9 +29,12 @@ class FeaturedItemsListView extends StatelessWidget {
                     onTap: () => GoRouter.of(context).push(
                         AppRouter.kBookDetailsView,
                         extra: state.books[index]),
-                    child: CustomBookItem(
-                      imageUrl:
-                          state.books[index].volumeInfo.imageLinks.thumbnail,
+                    child: Hero(
+                      tag: state.books[index].volumeInfo.title!,
+                      child: CustomBookItem(
+                        imageUrl:
+                            state.books[index].volumeInfo.imageLinks.thumbnail,
+                      ),
                     ),
                   ),
                 );
