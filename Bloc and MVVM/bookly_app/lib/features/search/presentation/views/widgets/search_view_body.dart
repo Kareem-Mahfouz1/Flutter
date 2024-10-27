@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/search/presentation/views/widgets/search_results_list_view.dart';
+import 'search_results_list_view.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
