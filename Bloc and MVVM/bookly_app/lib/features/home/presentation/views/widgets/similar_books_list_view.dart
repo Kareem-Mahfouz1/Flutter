@@ -29,7 +29,7 @@ class SimilarBooksListView extends StatelessWidget {
                         AppRouter.kBookDetailsView,
                         extra: state.books[index]),
                     child: Hero(
-                      tag: state.books[index].volumeInfo.title!,
+                      tag: state.books[index].id!,
                       child: CustomBookItem(
                         imageUrl:
                             state.books[index].volumeInfo.imageLinks.thumbnail,

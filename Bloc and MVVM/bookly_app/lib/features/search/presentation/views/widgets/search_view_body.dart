@@ -1,3 +1,5 @@
+import 'package:bookly_app/features/search/presentation/views/widgets/search_results_list_view.dart';
+
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'custom_search_text_field.dart';
@@ -33,25 +35,6 @@ class SearchViewBody extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class SearchResultsListView extends StatelessWidget {
-  const SearchResultsListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemCount: 100,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          // child: VirticalListViewItem(),
-          child: Text('data'),
-        );
-      },
     );
   }
 }

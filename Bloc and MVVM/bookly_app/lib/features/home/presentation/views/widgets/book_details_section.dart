@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 
 import '../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
@@ -18,7 +18,7 @@ class BookDetailsSetion extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .17),
           child: Hero(
-            tag: bookModel.volumeInfo.title!,
+            tag: bookModel.id!,
             child: CustomBookItem(
               imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
             ),

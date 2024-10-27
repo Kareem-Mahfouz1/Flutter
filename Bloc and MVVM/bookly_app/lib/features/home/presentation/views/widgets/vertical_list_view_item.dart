@@ -1,4 +1,4 @@
-import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/core/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/custom_book_item.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../../../../core/utils/styles.dart';
@@ -24,7 +24,7 @@ class VirticalListViewItem extends StatelessWidget {
         child: Row(
           children: [
             Hero(
-                tag: bookModel.volumeInfo.title!,
+                tag: bookModel.id!,
                 child: CustomBookItem(
                     imageUrl: bookModel.volumeInfo.imageLinks.thumbnail)),
             const SizedBox(width: 30),
