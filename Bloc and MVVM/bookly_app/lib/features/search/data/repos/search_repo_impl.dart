@@ -13,9 +13,8 @@ class SearchRepoImpl implements SearchRepo {
   Future<Either<Failure, List<BookModel>>> fetchSearchedBooks(
       {required String term}) async {
     try {
-      var data = await apiService.get(
-          endPoint:
-              'volumes?q=$term+intitle:$term&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0');
+      var data =
+          await apiService.get(endPoint: 'volumes?q=$term+intitle:$term');
       List<BookModel> books = [];
       for (var element in data['items']) {
         books.add(BookModel.fromJson(element));
