@@ -1,7 +1,7 @@
-import 'package:bookly_app/core/errors/failures.dart';
-import 'package:bookly_app/core/utils/api_service.dart';
-import 'package:bookly_app/core/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/data/repos/home_repo.dart';
+import '../../../../core/errors/failures.dart';
+import '../../../../core/utils/api_service.dart';
+import '../../../../core/models/book_model/book_model.dart';
+import 'home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
@@ -13,8 +13,7 @@ class HomeRepoImpl implements HomeRepo {
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiService.get(
-        endPoint:
-            'volumes?Filtering=free_ebooks&q=subject:cooking&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
+        endPoint: 'volumes?Filtering=free_ebooks&q=subject:cooking',
       );
 
       List<BookModel> books = [];
@@ -35,7 +34,7 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
         endPoint:
-            'volumes?Filtering=free_ebooks&Sorting=Newest&q=subject:programming&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
+            'volumes?Filtering=free_ebooks&Sorting=Newest&q=subject:programming ',
       );
 
       List<BookModel> books = [];
@@ -56,8 +55,12 @@ class HomeRepoImpl implements HomeRepo {
       {required String category}) async {
     try {
       var data = await apiService.get(
+<<<<<<< HEAD
+        endPoint: 'volumes?Filtering=free_ebooks&q=$category',
+=======
         endPoint:
-            'volumes?Filtering=free_ebooks&q=$category&key=AIzaSyAy2kR-2mv5_qAwxyPeqfjoIM3J2yK5_Q0',
+            'volumes?Filtering=free_ebooks&q=$category',
+>>>>>>> ccdce19ba507652eb87c0b8fbb1f1d610523675e
       );
 
       List<BookModel> books = [];

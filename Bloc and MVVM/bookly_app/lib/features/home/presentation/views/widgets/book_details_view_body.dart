@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/models/book_model/book_model.dart';
+import '../../../../../core/models/book_model/book_model.dart';
 
 import '../../../../../constants.dart';
 import 'book_details_section.dart';
