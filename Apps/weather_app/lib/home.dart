@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:weather_app/data/models/forecast_entry.dart';
 import 'package:weather_app/data/models/weather_response.dart';
 import 'package:weather_app/data/network/weather_api.dart';
-import 'package:weather_app/main.dart';
 
 class Home extends StatelessWidget {
   late WeatherResponse response;

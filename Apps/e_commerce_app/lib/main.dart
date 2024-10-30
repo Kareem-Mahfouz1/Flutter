@@ -1,7 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:e_commerce_app/data/models/user.dart';
-import 'package:e_commerce_app/pages/home.dart';
 import 'package:e_commerce_app/pages/login.dart';
 import 'package:flutter/material.dart';
 

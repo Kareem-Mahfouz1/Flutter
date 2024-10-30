@@ -196,7 +196,6 @@ class Register extends StatelessWidget {
                     SizedBox(),
                     ElevatedButton(
                       onPressed: () async {
-                        int id;
                         bool isRegistered = false;
                         await showDialog(
                           context: context,
