@@ -23,9 +23,8 @@ class MainSection extends StatelessWidget {
             const WelcomeRow(),
             const SizedBox(height: 10),
             const FadedText(text: 'Sign in to Continue'),
-            const SizedBox(height: 50),
+            const SizedBox(height: 45),
             TextField(
-              onTapOutside: (event) => FocusScope.of(context).unfocus(),
               cursorColor: kPrimaryColor,
               decoration: InputDecoration(
                 label: const FadedText(text: 'Email'),
@@ -35,7 +34,6 @@ class MainSection extends StatelessWidget {
             ),
             const SizedBox(height: 35),
             TextField(
-              onTapOutside: (event) => FocusScope.of(context).unfocus(),
               obscureText: true,
               cursorColor: kPrimaryColor,
               decoration: InputDecoration(
