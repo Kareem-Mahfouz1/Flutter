@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:qwik_buy/core/utils/app_router.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class QwikBuy extends StatelessWidget {
       routerConfig: AppRouter.router,
       theme: ThemeData().copyWith(
         scaffoldBackgroundColor: Colors.white,
+        textTheme: GoogleFonts.robotoTextTheme(),
       ),
     );
   }
