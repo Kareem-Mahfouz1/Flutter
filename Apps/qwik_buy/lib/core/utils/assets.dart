@@ -4,4 +4,5 @@ class MyAssets {
   static const googleLogo = "assets/images/google_logo.png";
   static const name = "assets/images/name.png";
   static const banner = "assets/images/banner.png";
+  static const testImage = "assets/images/test_Image.png";
 }
