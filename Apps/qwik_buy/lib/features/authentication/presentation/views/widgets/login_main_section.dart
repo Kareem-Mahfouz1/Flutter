@@ -5,10 +5,11 @@ import 'package:qwik_buy/core/widgets/custom_button.dart';
 import 'package:qwik_buy/core/widgets/custom_text_button.dart';
 import 'package:qwik_buy/core/widgets/faded_text.dart';
 
+import '../../../../../core/functions/text_field_borders.dart';
 import 'welcome_row.dart';
 
-class MainSection extends StatelessWidget {
-  const MainSection({super.key});
+class LoginMainSection extends StatelessWidget {
+  const LoginMainSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,13 +43,14 @@ class MainSection extends StatelessWidget {
                 focusedBorder: focusedBorder(),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 CustomTextButton(
                   text: 'Forgot Password?',
                   style: Styles.textStyle14,
                   color: Colors.black,
+                  onPressed: () {},
                 )
               ],
             ),
@@ -58,23 +60,6 @@ class MainSection extends StatelessWidget {
             )
           ],
         ),
-      ),
-    );
-  }
-
-  UnderlineInputBorder enabledBorder() {
-    return const UnderlineInputBorder(
-      borderSide: BorderSide(
-        color: Colors.grey,
-      ),
-    );
-  }
-
-  UnderlineInputBorder focusedBorder() {
-    return const UnderlineInputBorder(
-      borderSide: BorderSide(
-        color: kPrimaryColor,
-        width: 2,
       ),
     );
   }

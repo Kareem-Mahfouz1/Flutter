@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:qwik_buy/core/utils/app_router.dart';
 import 'package:qwik_buy/core/widgets/custom_text_button.dart';
 
 import '../../../../../constants.dart';
@@ -11,10 +13,10 @@ class WelcomeRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
+        const Text(
           'Welcome,',
           style: Styles.textStyle30,
         ),
@@ -22,6 +24,9 @@ class WelcomeRow extends StatelessWidget {
           text: 'Sign Up',
           color: kPrimaryColor,
           style: Styles.textStyle18,
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.kSignUpView);
+          },
         )
       ],
     );

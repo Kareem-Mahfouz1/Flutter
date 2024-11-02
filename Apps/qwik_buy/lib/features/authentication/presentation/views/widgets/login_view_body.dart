@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:qwik_buy/constants.dart';
 import '../../../../../core/utils/styles.dart';
-import 'main_section.dart';
+import 'login_main_section.dart';
 import 'other_login_section.dart';
 
 class LoginViewBody extends StatelessWidget {
@@ -10,12 +11,12 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final double scrnHeight = MediaQuery.sizeOf(context).height;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: kHoriontalPadding),
       child: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: scrnHeight * .12),
-            const MainSection(),
+            const LoginMainSection(),
             SizedBox(height: scrnHeight * .025),
             const Text(
               '-OR-',
