@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qwik_buy/constants.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
+import 'package:qwik_buy/core/widgets/custom_text_button.dart';
 import 'package:qwik_buy/features/explore/presentation/views/widgets/categories_list_view.dart';
 
 import 'best_selling_grid_view.dart';
@@ -30,7 +31,6 @@ class ExploreViewBody extends StatelessWidget {
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   const CategoriesListView(),
-                  const SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -39,13 +39,14 @@ class ExploreViewBody extends StatelessWidget {
                         style: Styles.textStyle18
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      const Text(
-                        'See all',
+                      CustomTextButton(
+                        text: 'See All',
+                        color: Colors.black,
                         style: Styles.textStyle16,
-                      ),
+                        onPressed: () {},
+                      )
                     ],
                   ),
-                  const SizedBox(height: 30),
                 ],
               ),
             ),
