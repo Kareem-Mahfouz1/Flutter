@@ -3,8 +3,8 @@ import 'package:qwik_buy/constants.dart';
 
 import 'custom_text_search_field.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class CustomSearchAppBar extends StatelessWidget {
+  const CustomSearchAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget {
               backgroundColor: WidgetStatePropertyAll(kPrimaryColor),
               foregroundColor: WidgetStatePropertyAll(Colors.white)),
           onPressed: () {},
-          iconSize: 28,
+          iconSize: 26,
           icon: const Icon(Icons.camera_alt_outlined),
         )
       ],

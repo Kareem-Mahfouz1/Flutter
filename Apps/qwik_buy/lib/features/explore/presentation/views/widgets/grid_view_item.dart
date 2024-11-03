@@ -4,14 +4,13 @@ import 'package:qwik_buy/core/utils/assets.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/faded_text.dart';
 
-class BestSellingGridViewItem extends StatelessWidget {
-  const BestSellingGridViewItem({super.key});
+class GridViewItem extends StatelessWidget {
+  const GridViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AspectRatio(
           aspectRatio: .68,
@@ -20,7 +19,7 @@ class BestSellingGridViewItem extends StatelessWidget {
         const Text(
           'Leather Wristwatch',
           style: Styles.textStyle16,
-          maxLines: 1,
+          maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         const FadedText(text: 'Tag Heuer'),

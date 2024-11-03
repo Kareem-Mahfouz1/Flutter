@@ -5,7 +5,7 @@ import 'package:qwik_buy/core/widgets/custom_text_button.dart';
 import 'package:qwik_buy/features/explore/presentation/views/widgets/categories_list_view.dart';
 
 import 'best_selling_grid_view.dart';
-import 'custom_app_bar.dart';
+import 'custom_search_app_bar.dart';
 
 class ExploreViewBody extends StatelessWidget {
   const ExploreViewBody({super.key});
@@ -23,7 +23,7 @@ class ExploreViewBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 30),
-                  const CustomAppBar(),
+                  const CustomSearchAppBar(),
                   const SizedBox(height: 40),
                   Text(
                     'Categories',
@@ -35,7 +35,7 @@ class ExploreViewBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Best Selling',
+                        'Fresh Drops',
                         style: Styles.textStyle18
                             .copyWith(fontWeight: FontWeight.bold),
                       ),

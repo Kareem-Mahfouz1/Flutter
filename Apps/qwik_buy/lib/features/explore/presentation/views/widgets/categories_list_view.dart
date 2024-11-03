@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:qwik_buy/core/utils/app_router.dart';
 
 import 'categories_list_view_item.dart';
 
@@ -14,8 +16,16 @@ class CategoriesListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: list.length,
         itemBuilder: (context, index) {
-          return CategoriesListViewItem(
-            text: list[index],
+          return GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(
+                AppRouter.kCategoreyView,
+                extra: list[index],
+              );
+            },
+            child: CategoriesListViewItem(
+              text: list[index],
+            ),
           );
         },
       ),

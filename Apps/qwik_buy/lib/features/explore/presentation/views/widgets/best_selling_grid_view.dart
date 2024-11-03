@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'Best_selling_grid_view_item.dart';
+import 'package:qwik_buy/features/explore/presentation/views/widgets/grid_view_item.dart';
 
 class BestSellingGridView extends StatelessWidget {
   const BestSellingGridView({super.key});
@@ -9,13 +8,13 @@ class BestSellingGridView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 15,
-          childAspectRatio: .51),
+        crossAxisCount: 2,
+        crossAxisSpacing: 15,
+        childAspectRatio: .50,
+      ),
       itemCount: 5,
       itemBuilder: (context, index) {
-        return const BestSellingGridViewItem();
+        return const GridViewItem();
       },
     );
   }
