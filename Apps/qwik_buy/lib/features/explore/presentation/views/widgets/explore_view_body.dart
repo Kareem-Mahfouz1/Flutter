@@ -4,7 +4,7 @@ import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/custom_text_button.dart';
 import 'package:qwik_buy/features/explore/presentation/views/widgets/categories_list_view.dart';
 
-import 'best_selling_grid_view.dart';
+import 'newest_items_grid_view.dart';
 import 'custom_search_app_bar.dart';
 
 class ExploreViewBody extends StatelessWidget {
@@ -55,7 +55,7 @@ class ExploreViewBody extends StatelessWidget {
       },
       body: const Padding(
         padding: EdgeInsets.symmetric(horizontal: kHoriontalPadding),
-        child: BestSellingGridView(),
+        child: NewestItemsGridView(),
       ),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qwik_buy/features/explore/presentation/views/widgets/grid_view_item.dart';
 
-class BestSellingGridView extends StatelessWidget {
-  const BestSellingGridView({super.key});
+class NewestItemsGridView extends StatelessWidget {
+  const NewestItemsGridView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qwik_buy/core/widgets/custom_back_button.dart';
 import 'package:qwik_buy/features/authentication/presentation/views/widgets/signup_main_section.dart';
 
 class SignupViewBody extends StatelessWidget {
@@ -11,7 +12,7 @@ class SignupViewBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(height: 30),
-          BackButton(),
+          CustomBackButton(),
           SizedBox(height: 30),
           SignupMainSection()
         ],

@@ -18,14 +18,17 @@ class CustomCategoryAppBar extends StatelessWidget {
           categorey,
           style: Styles.textStyle20,
         ),
-        IconButton(
-          padding: const EdgeInsets.all(9),
-          style: const ButtonStyle(
-              backgroundColor: WidgetStatePropertyAll(kPrimaryColor),
-              foregroundColor: WidgetStatePropertyAll(Colors.white)),
-          onPressed: () {},
-          iconSize: 26,
-          icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+        Padding(
+          padding: const EdgeInsets.only(right: kHoriontalPadding - 5),
+          child: IconButton(
+            padding: const EdgeInsets.all(8),
+            style: const ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(kPrimaryColor),
+                foregroundColor: WidgetStatePropertyAll(Colors.white)),
+            onPressed: () {},
+            iconSize: 21,
+            icon: const Icon(FontAwesomeIcons.magnifyingGlass),
+          ),
         )
       ],
     );

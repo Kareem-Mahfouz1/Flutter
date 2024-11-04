@@ -9,6 +9,7 @@ import '../../features/splash/views/splash_view.dart';
 abstract class AppRouter {
   static const kLoginView = '/loginView';
   static const kSignUpView = '/SignUpView';
+  static const kExploreView = '/ExploreView';
   static const kCategoreyView = '/CategoreyView';
   static final router = GoRouter(routes: [
     GoRoute(
@@ -22,6 +23,10 @@ abstract class AppRouter {
     GoRoute(
       path: kSignUpView,
       builder: (context, state) => const SignupView(),
+    ),
+    GoRoute(
+      path: kExploreView,
+      builder: (context, state) => const ExploreView(),
     ),
     GoRoute(
       path: kCategoreyView,

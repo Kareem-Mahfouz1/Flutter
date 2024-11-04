@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:qwik_buy/constants.dart';
 
 class CustomTextSearchField extends StatelessWidget {
   const CustomTextSearchField({super.key});
@@ -10,6 +11,7 @@ class CustomTextSearchField extends StatelessWidget {
       child: SizedBox(
         height: 50,
         child: TextFormField(
+          cursorColor: kPrimaryColor,
           decoration: InputDecoration(
             fillColor: const Color.fromARGB(230, 245, 245, 245),
             filled: true,
