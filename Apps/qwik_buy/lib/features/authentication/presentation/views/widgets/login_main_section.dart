@@ -55,8 +55,10 @@ class LoginMainSection extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            const CustomButton(
-              text: 'SIGN IN',
+            const SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: CustomButton(text: 'SIGN IN'),
             )
           ],
         ),

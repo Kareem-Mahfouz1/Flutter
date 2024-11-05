@@ -10,8 +10,6 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
-      width: double.infinity,
       child: TextButton(
         style: ButtonStyle(
           backgroundColor: const WidgetStatePropertyAll(kPrimaryColor),
