@@ -4,8 +4,9 @@ import 'package:qwik_buy/core/utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
+  final void Function()? onPressed;
 
-  const CustomButton({super.key, required this.text});
+  const CustomButton({super.key, required this.text, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class CustomButton extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: Styles.textStyle14,

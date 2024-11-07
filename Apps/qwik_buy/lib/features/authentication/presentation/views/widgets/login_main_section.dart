@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qwik_buy/constants.dart';
+import 'package:qwik_buy/core/utils/app_router.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/custom_button.dart';
 import 'package:qwik_buy/core/widgets/custom_text_button.dart';
@@ -55,10 +57,15 @@ class LoginMainSection extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 10),
-            const SizedBox(
+            SizedBox(
               height: 50,
               width: double.infinity,
-              child: CustomButton(text: 'SIGN IN'),
+              child: CustomButton(
+                text: 'SIGN IN',
+                onPressed: () {
+                  GoRouter.of(context).go(AppRouter.kExploreView);
+                },
+              ),
             )
           ],
         ),

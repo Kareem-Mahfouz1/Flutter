@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qwik_buy/constants.dart';
 import 'package:qwik_buy/core/functions/text_field_borders.dart';
+import 'package:qwik_buy/core/utils/app_router.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/custom_button.dart';
 import 'package:qwik_buy/core/widgets/faded_text.dart';
@@ -53,11 +55,14 @@ class SignupMainSection extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 45),
-              const SizedBox(
+              SizedBox(
                 height: 50,
                 width: double.infinity,
                 child: CustomButton(
                   text: 'SIGN UP',
+                  onPressed: () {
+                    GoRouter.of(context).go(AppRouter.kExploreView);
+                  },
                 ),
               )
             ],

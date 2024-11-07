@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:qwik_buy/core/utils/app_router.dart';
 import 'package:qwik_buy/features/explore/presentation/views/widgets/grid_view_item.dart';
 
 class NewestItemsGridView extends StatelessWidget {
@@ -14,7 +16,11 @@ class NewestItemsGridView extends StatelessWidget {
       ),
       itemCount: 5,
       itemBuilder: (context, index) {
-        return const GridViewItem();
+        return GestureDetector(
+            onTap: () {
+              GoRouter.of(context).push(AppRouter.kItemDetailsView);
+            },
+            child: const GridViewItem());
       },
     );
   }

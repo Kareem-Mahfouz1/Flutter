@@ -9,17 +9,17 @@ import 'package:qwik_buy/features/explore/presentation/views/item_details_view.d
 import '../../features/splash/views/splash_view.dart';
 
 abstract class AppRouter {
+  static const kCartView = '/CartView';
   static const kLoginView = '/loginView';
   static const kSignUpView = '/SignUpView';
   static const kExploreView = '/ExploreView';
   static const kCategoreyView = '/CategoreyView';
   static const kItemDetailsView = '/ItemDetailsView';
-  static const kCartView = '/CartView';
   static final router = GoRouter(
     routes: [
       GoRoute(
         path: '/',
-        builder: (context, state) => const CartView(),
+        builder: (context, state) => const SplashView(),
       ),
       GoRoute(
         path: kLoginView,
