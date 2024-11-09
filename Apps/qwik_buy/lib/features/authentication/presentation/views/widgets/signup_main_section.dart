@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qwik_buy/constants.dart';
 import 'package:qwik_buy/core/functions/text_field_borders.dart';
-import 'package:qwik_buy/core/utils/app_router.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/custom_button.dart';
 import 'package:qwik_buy/core/widgets/faded_text.dart';
+import 'package:qwik_buy/features/authentication/data/models/user.dart';
+import 'package:qwik_buy/features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
 
 class SignupMainSection extends StatelessWidget {
   const SignupMainSection({super.key});
+  static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  static final TextEditingController name = TextEditingController();
+  static final TextEditingController email = TextEditingController();
+  static final TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -19,53 +24,98 @@ class SignupMainSection extends StatelessWidget {
         elevation: 3,
         child: Container(
           margin: const EdgeInsets.all(12),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'Sign Up',
-                style: Styles.textStyle30,
-              ),
-              const SizedBox(height: 45),
-              TextField(
-                cursorColor: kPrimaryColor,
-                decoration: InputDecoration(
-                  label: const FadedText(text: 'Name'),
-                  enabledBorder: enabledBorder(),
-                  focusedBorder: focusedBorder(),
+          child: Form(
+            key: formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Sign Up',
+                  style: Styles.textStyle30,
                 ),
-              ),
-              const SizedBox(height: 35),
-              TextField(
-                cursorColor: kPrimaryColor,
-                decoration: InputDecoration(
-                  label: const FadedText(text: 'Email'),
-                  enabledBorder: enabledBorder(),
-                  focusedBorder: focusedBorder(),
-                ),
-              ),
-              const SizedBox(height: 35),
-              TextField(
-                obscureText: true,
-                cursorColor: kPrimaryColor,
-                decoration: InputDecoration(
-                  label: const FadedText(text: 'Password'),
-                  enabledBorder: enabledBorder(),
-                  focusedBorder: focusedBorder(),
-                ),
-              ),
-              const SizedBox(height: 45),
-              SizedBox(
-                height: 50,
-                width: double.infinity,
-                child: CustomButton(
-                  text: 'SIGN UP',
-                  onPressed: () {
-                    GoRouter.of(context).go(AppRouter.kExploreView);
+                const SizedBox(height: 45),
+                TextFormField(
+                  cursorColor: kPrimaryColor,
+                  controller: name,
+                  decoration: InputDecoration(
+                    label: const FadedText(text: 'Name'),
+                    enabledBorder: enabledBorder(),
+                    focusedBorder: focusedBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    final emailRegex = RegExp(r'^[\w-]$');
+                    if (!emailRegex.hasMatch(value)) {
+                      return 'Enter a valid name';
+                    }
+                    return null;
                   },
                 ),
-              )
-            ],
+                const SizedBox(height: 35),
+                TextFormField(
+                  cursorColor: kPrimaryColor,
+                  controller: email,
+                  decoration: InputDecoration(
+                    label: const FadedText(text: 'Email'),
+                    enabledBorder: enabledBorder(),
+                    focusedBorder: focusedBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    final emailRegex =
+                        RegExp(r'^[\w-]+@([\w-]+\.)+[\w-]{2,4}$');
+                    if (!emailRegex.hasMatch(value)) {
+                      return 'Enter a valid email';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 35),
+                TextFormField(
+                  obscureText: true,
+                  cursorColor: kPrimaryColor,
+                  controller: password,
+                  decoration: InputDecoration(
+                    label: const FadedText(text: 'Password'),
+                    enabledBorder: enabledBorder(),
+                    focusedBorder: focusedBorder(),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    if (value.length < 6) {
+                      return 'Password can\'t be less than 6 characters';
+                    }
+                    return null;
+                  },
+                ),
+                const SizedBox(height: 45),
+                SizedBox(
+                  height: 50,
+                  width: double.infinity,
+                  child: CustomButton(
+                    text: 'SIGN UP',
+                    onPressed: () {
+                      print(name.text);
+                      BlocProvider.of<AuthCubit>(context).signupUser(
+                        User.fromMap(
+                          {
+                            'name': name.text,
+                            'email': email.text,
+                            'password': password.text,
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

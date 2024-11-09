@@ -29,7 +29,7 @@ class DbManager {
     create table $tableUsers ( 
     $columnId integer primary key, 
     $columnName text not null,
-    $columnEmail text primary not null,
+    $columnEmail text unique not null,
     $columnPassword text not null)
     ''');
   }

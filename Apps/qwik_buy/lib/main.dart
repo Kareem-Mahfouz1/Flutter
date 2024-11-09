@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:qwik_buy/core/utils/app_router.dart';
+import 'package:qwik_buy/core/utils/service_locator.dart';
 
 void main() {
+  setupServiceLocator();
   runApp(const QwikBuy());
 }
 
