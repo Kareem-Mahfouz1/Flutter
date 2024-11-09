@@ -1,5 +1,5 @@
 import 'package:path/path.dart';
-import 'package:qwik_buy/features/explore/data/models/user.dart';
+import 'package:qwik_buy/features/authentication/data/models/user.dart';
 import 'package:sqflite/sqflite.dart';
 
 const String tableUsers = 'users';
@@ -29,7 +29,7 @@ class DbManager {
     create table $tableUsers ( 
     $columnId integer primary key, 
     $columnName text not null,
-    $columnEmail text not null,
+    $columnEmail text primary not null,
     $columnPassword text not null)
     ''');
   }
@@ -40,9 +40,23 @@ class DbManager {
     return users;
   }
 
-  regesterUser(User user) async {
+  Future<bool> signupUser(User user) async {
     Database db = await database;
-    await db.insert(tableUsers, user.toMap());
+    int id = await db.insert(tableUsers, user.toMap());
+    return id == 0 ? false : true;
+  }
+
+  Future<bool> loginUser(String email, String password) async {
+    Database db = await database;
+    List<Map<String, dynamic>> target = await db.query(
+      tableUsers,
+      where: 'email = ? and password = ?',
+      whereArgs: [email, password],
+    );
+    if (target.isEmpty) {
+      return false;
+    }
+    return true;
   }
 
   deleteUser(int id) async {

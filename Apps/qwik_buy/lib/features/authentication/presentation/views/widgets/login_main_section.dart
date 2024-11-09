@@ -20,54 +20,56 @@ class LoginMainSection extends StatelessWidget {
       elevation: 3,
       child: Container(
         margin: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const WelcomeRow(),
-            const SizedBox(height: 10),
-            const FadedText(text: 'Sign in to Continue'),
-            const SizedBox(height: 45),
-            TextField(
-              cursorColor: kPrimaryColor,
-              decoration: InputDecoration(
-                label: const FadedText(text: 'Email'),
-                enabledBorder: enabledBorder(),
-                focusedBorder: focusedBorder(),
+        child: Form(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const WelcomeRow(),
+              const SizedBox(height: 10),
+              const FadedText(text: 'Sign in to Continue'),
+              const SizedBox(height: 45),
+              TextFormField(
+                cursorColor: kPrimaryColor,
+                decoration: InputDecoration(
+                  label: const FadedText(text: 'Email'),
+                  enabledBorder: enabledBorder(),
+                  focusedBorder: focusedBorder(),
+                ),
               ),
-            ),
-            const SizedBox(height: 35),
-            TextField(
-              obscureText: true,
-              cursorColor: kPrimaryColor,
-              decoration: InputDecoration(
-                label: const FadedText(text: 'Password'),
-                enabledBorder: enabledBorder(),
-                focusedBorder: focusedBorder(),
+              const SizedBox(height: 35),
+              TextField(
+                obscureText: true,
+                cursorColor: kPrimaryColor,
+                decoration: InputDecoration(
+                  label: const FadedText(text: 'Password'),
+                  enabledBorder: enabledBorder(),
+                  focusedBorder: focusedBorder(),
+                ),
               ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                CustomTextButton(
-                  text: 'Forgot Password?',
-                  style: Styles.textStyle14,
-                  color: Colors.black,
-                  onPressed: () {},
-                )
-              ],
-            ),
-            const SizedBox(height: 10),
-            SizedBox(
-              height: 50,
-              width: double.infinity,
-              child: CustomButton(
-                text: 'SIGN IN',
-                onPressed: () {
-                  GoRouter.of(context).go(AppRouter.kExploreView);
-                },
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  CustomTextButton(
+                    text: 'Forgot Password?',
+                    style: Styles.textStyle14,
+                    color: Colors.black,
+                    onPressed: () {},
+                  )
+                ],
               ),
-            )
-          ],
+              const SizedBox(height: 10),
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: CustomButton(
+                  text: 'SIGN IN',
+                  onPressed: () {
+                    GoRouter.of(context).go(AppRouter.kExploreView);
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
