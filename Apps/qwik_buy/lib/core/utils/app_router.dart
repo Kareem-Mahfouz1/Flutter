@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:qwik_buy/features/authentication/presentation/views/login_view.dart';
 import 'package:qwik_buy/features/authentication/presentation/views/signup_view.dart';
@@ -23,15 +24,57 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kLoginView,
-        builder: (context, state) => const LoginView(),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const LoginView(),
+            transitionDuration: const Duration(milliseconds: 300),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                        begin: const Offset(0, 1), end: const Offset(0, 0))
+                    .animate(animation),
+                child: child,
+              );
+            },
+          );
+        },
       ),
       GoRoute(
         path: kSignUpView,
-        builder: (context, state) => const SignupView(),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const SignupView(),
+            transitionDuration: const Duration(milliseconds: 200),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                        begin: const Offset(1, 0), end: const Offset(0, 0))
+                    .animate(animation),
+                child: child,
+              );
+            },
+          );
+        },
       ),
       GoRoute(
         path: kExploreView,
-        builder: (context, state) => const ExploreView(),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: const ExploreView(),
+            transitionDuration: const Duration(milliseconds: 200),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                        begin: const Offset(1, 0), end: const Offset(0, 0))
+                    .animate(animation),
+                child: child,
+              );
+            },
+          );
+        },
       ),
       GoRoute(
         path: kCategoreyView,
