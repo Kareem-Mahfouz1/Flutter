@@ -16,8 +16,8 @@ class LoginView extends StatelessWidget {
           GoRouter.of(context).go(AppRouter.kExploreView);
         } else if (state is LoginFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('email or password is incorrect.'),
+            SnackBar(
+              content: Text(state.errMessage),
             ),
           );
         }

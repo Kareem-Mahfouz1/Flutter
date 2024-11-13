@@ -8,8 +8,8 @@ class CategoriesListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 20, top: 20, bottom: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      margin: const EdgeInsets.only(top: 20, bottom: 20, right: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: Colors.grey[100],
         borderRadius: BorderRadius.circular(30),

@@ -1,4 +1,6 @@
+import 'package:dartz/dartz.dart';
 import 'package:path/path.dart';
+import 'package:qwik_buy/core/errors/failure.dart';
 import 'package:qwik_buy/features/authentication/data/models/user.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -34,29 +36,39 @@ class DbManager {
     ''');
   }
 
-  Future<List<Map>> allUsers() async {
+  Future<List<User>> allUsers() async {
     final db = await database;
-    List<Map> users = await db.query(tableUsers);
+    List<Map<String, dynamic>> response = await db.query(tableUsers);
+    List<User> users = response.map((entry) => User.fromMap(entry)).toList();
     return users;
   }
 
-  Future<bool> signupUser(User user) async {
+  Future<Either<Failure, int>> loginUser(String email, String password) async {
     Database db = await database;
-    int id = await db.insert(tableUsers, user.toMap());
-    return id == 0 ? false : true;
+    try {
+      List<Map<String, dynamic>> target = await db.query(
+        tableUsers,
+        where: 'email = ? and password = ?',
+        whereArgs: [email, password],
+      );
+      if (target.isEmpty) {
+        throw Exception('Email or password is incorrect, Please try again.');
+      }
+      User user = User.fromMap(target[0]);
+      return Right(user.id!);
+    } catch (e) {
+      return Left(ServerFailure(e.toString()));
+    }
   }
 
-  Future<bool> loginUser(String email, String password) async {
+  Future<Either<Failure, int>> signupUser(User user) async {
     Database db = await database;
-    List<Map<String, dynamic>> target = await db.query(
-      tableUsers,
-      where: 'email = ? and password = ?',
-      whereArgs: [email, password],
-    );
-    if (target.isEmpty) {
-      return false;
+    try {
+      int id = await db.insert(tableUsers, user.toMap());
+      return Right(id);
+    } catch (e) {
+      return Left(ServerFailure('User already exists.'));
     }
-    return true;
   }
 
   deleteUser(int id) async {

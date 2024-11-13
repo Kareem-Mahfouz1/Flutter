@@ -46,9 +46,12 @@ class SignupMainSection extends StatelessWidget {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your name';
                     }
-                    final emailRegex = RegExp(r'^[\w-]$');
-                    if (!emailRegex.hasMatch(value)) {
-                      return 'Enter a valid name';
+                    final nameRegex = RegExp(r"^[a-zA-Z\s]+$");
+                    if (!nameRegex.hasMatch(value)) {
+                      return 'Name must contain only letters and spaces';
+                    }
+                    if (value.length < 2) {
+                      return 'Name must be at least 2 characters long';
                     }
                     return null;
                   },
@@ -101,16 +104,17 @@ class SignupMainSection extends StatelessWidget {
                   child: CustomButton(
                     text: 'SIGN UP',
                     onPressed: () {
-                      print(name.text);
-                      BlocProvider.of<AuthCubit>(context).signupUser(
-                        User.fromMap(
-                          {
-                            'name': name.text,
-                            'email': email.text,
-                            'password': password.text,
-                          },
-                        ),
-                      );
+                      if (formKey.currentState!.validate()) {
+                        BlocProvider.of<AuthCubit>(context).signupUser(
+                          User.fromMap(
+                            {
+                              'name': name.text,
+                              'email': email.text,
+                              'password': password.text,
+                            },
+                          ),
+                        );
+                      }
                     },
                   ),
                 )

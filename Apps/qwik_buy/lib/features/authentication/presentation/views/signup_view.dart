@@ -20,8 +20,8 @@ class SignupView extends StatelessWidget {
           );
         } else if (state is SignupFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('something went wrong, try another email'),
+            SnackBar(
+              content: Text(state.errMessage),
             ),
           );
         }

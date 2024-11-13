@@ -88,9 +88,23 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kCategoreyView,
-        builder: (context, state) => CategoreyView(
-          categorey: state.extra as String,
-        ),
+        pageBuilder: (context, state) {
+          return CustomTransitionPage(
+            child: CategoreyView(
+              categorey: state.extra as String,
+            ),
+            transitionDuration: const Duration(milliseconds: 200),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return SlideTransition(
+                position: Tween<Offset>(
+                        begin: const Offset(1, 0), end: const Offset(0, 0))
+                    .animate(animation),
+                child: child,
+              );
+            },
+          );
+        },
       ),
       GoRoute(
         path: kItemDetailsView,
