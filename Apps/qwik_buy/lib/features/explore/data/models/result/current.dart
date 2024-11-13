@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
 class Current extends Equatable {
-  final int? value;
+  final double? value;
   final String? text;
 
   const Current({this.value, this.text});
 
   factory Current.fromJson(Map<String, dynamic> json) => Current(
-        value: json['value'] as int?,
+        value: json['value'] as double?,
         text: json['text'] as String?,
       );
 

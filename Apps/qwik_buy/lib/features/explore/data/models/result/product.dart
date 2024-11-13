@@ -68,7 +68,9 @@ class Product extends Equatable {
         productType: json['productType'] as String?,
         url: json['url'] as String?,
         imageUrl: json['imageUrl'] as String?,
-        additionalImageUrls: json['additionalImageUrls'] as List<String>?,
+        additionalImageUrls: json['additionalImageUrls'] == null
+            ? null
+            : List<String>.from(json['additionalImageUrls']),
         videoUrl: json['videoUrl'] as dynamic,
         showVideo: json['showVideo'] as bool?,
         isSellingFast: json['isSellingFast'] as bool?,
