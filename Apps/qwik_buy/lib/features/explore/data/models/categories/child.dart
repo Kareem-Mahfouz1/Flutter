@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:qwik_buy/features/explore/data/models/categories/link.dart';
 
 import 'content.dart';
 import 'display.dart';
@@ -13,7 +14,7 @@ class Child extends Equatable {
   final Content? content;
   final Display? display;
   final Style? style;
-  final dynamic link;
+  final Link? link;
   final List<Child>? children;
 
   const Child({
@@ -44,7 +45,9 @@ class Child extends Equatable {
         style: json['style'] == null
             ? null
             : Style.fromJson(json['style'] as Map<String, dynamic>),
-        link: json['link'] as dynamic,
+        link: json['link'] == null
+            ? null
+            : Link.fromJson(json['link'] as Map<String, dynamic>),
         children: (json['children'] as List<dynamic>?)
             ?.map((e) => Child.fromJson(e as Map<String, dynamic>))
             .toList(),

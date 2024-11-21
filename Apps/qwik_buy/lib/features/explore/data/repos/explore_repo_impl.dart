@@ -44,9 +44,20 @@ class ExploreRepoImpl implements ExploreRepo {
   }
 
   @override
-  Future<Either<Failure, Categories>> fetchProductsByCategorey(
-      {required String categorey}) {
-    // TODO: implement fetchProductsByCategorey
-    throw UnimplementedError();
+  Future<Either<Failure, Result>> fetchProductsByCategorey(
+      {required int id}) async {
+    try {
+      var data = await webService.get(
+          endPoint:
+              'products/v2/list?store=US&offset=0&categoryId=$id&country=US&sort=freshness&currency=USD&sizeSchema=US&limit=48&lang=en-US');
+      Result response = Result.fromJson(data);
+      return Right(response);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioException(e));
+      } else {
+        return Left(ServerFailure(e.toString()));
+      }
+    }
   }
 }

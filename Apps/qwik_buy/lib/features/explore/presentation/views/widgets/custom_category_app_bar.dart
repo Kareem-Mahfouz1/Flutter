@@ -5,8 +5,8 @@ import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/custom_back_button.dart';
 
 class CustomCategoryAppBar extends StatelessWidget {
-  const CustomCategoryAppBar({super.key, required this.categorey});
-  final String categorey;
+  const CustomCategoryAppBar({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CustomCategoryAppBar extends StatelessWidget {
       children: [
         const CustomBackButton(),
         Text(
-          categorey,
+          title,
           style: Styles.textStyle20,
         ),
         Padding(

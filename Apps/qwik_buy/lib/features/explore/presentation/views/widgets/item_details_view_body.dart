@@ -36,7 +36,9 @@ class ItemDetailsViewBody extends StatelessWidget {
         ),
         Positioned.fill(
           top: MediaQuery.sizeOf(context).height * .89,
-          child: const CustomItemActionBar(),
+          child: CustomItemActionBar(
+            product: product,
+          ),
         )
       ],
     );

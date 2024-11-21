@@ -6,6 +6,5 @@ import 'package:qwik_buy/features/explore/data/models/result/result.dart';
 abstract class ExploreRepo {
   Future<Either<Failure, Categories>> fetchCategories();
   Future<Either<Failure, Result>> fetchFreshDrops();
-  Future<Either<Failure, Categories>> fetchProductsByCategorey(
-      {required String categorey});
+  Future<Either<Failure, Result>> fetchProductsByCategorey({required int id});
 }

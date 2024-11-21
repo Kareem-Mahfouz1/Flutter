@@ -3,9 +3,9 @@ import 'package:equatable/equatable.dart';
 class Link extends Equatable {
   final String? linkType;
   final dynamic brandSectionAlias;
-  final dynamic categoryId;
+  final int? categoryId;
   final String? webUrl;
-  final dynamic appUrl;
+  final String? appUrl;
 
   const Link({
     this.linkType,
@@ -18,9 +18,9 @@ class Link extends Equatable {
   factory Link.fromJson(Map<String, dynamic> json) => Link(
         linkType: json['linkType'] as String?,
         brandSectionAlias: json['brandSectionAlias'] as dynamic,
-        categoryId: json['categoryId'] as dynamic,
+        categoryId: json['categoryId'] as int?,
         webUrl: json['webUrl'] as String?,
-        appUrl: json['appUrl'] as dynamic,
+        appUrl: json['appUrl'] as String?,
       );
 
   Map<String, dynamic> toJson() => {

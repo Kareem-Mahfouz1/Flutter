@@ -4,6 +4,7 @@ import 'child.dart';
 import 'content.dart';
 import 'display.dart';
 import 'style.dart';
+import 'link.dart';
 
 class Brand extends Equatable {
   final String? id;
@@ -14,7 +15,7 @@ class Brand extends Equatable {
   final Content? content;
   final Display? display;
   final Style? style;
-  final dynamic link;
+  final Link? link;
   final List<Child>? children;
 
   const Brand({
@@ -45,7 +46,9 @@ class Brand extends Equatable {
         style: json['style'] == null
             ? null
             : Style.fromJson(json['style'] as Map<String, dynamic>),
-        link: json['link'] as dynamic,
+        link: json['link'] == null
+            ? null
+            : Link.fromJson(json['link'] as Map<String, dynamic>),
         children: (json['children'] as List<dynamic>?)
             ?.map((e) => Child.fromJson(e as Map<String, dynamic>))
             .toList(),

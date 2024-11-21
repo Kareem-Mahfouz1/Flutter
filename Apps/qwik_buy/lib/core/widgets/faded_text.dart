@@ -11,6 +11,8 @@ class FadedText extends StatelessWidget {
       opacity: .6,
       child: Text(
         text,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
         style: Styles.textStyle14,
       ),
     );
