@@ -19,7 +19,8 @@ class NewestItemsGridView extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
             onTap: () {
-              GoRouter.of(context).push(AppRouter.kItemDetailsView);
+              GoRouter.of(context)
+                  .push(AppRouter.kItemDetailsView, extra: products![index]);
             },
             child: GridViewItem(product: products![index]));
       },

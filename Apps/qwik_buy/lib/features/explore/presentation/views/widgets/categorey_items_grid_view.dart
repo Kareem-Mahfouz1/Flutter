@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/grid_view_item.dart';
 
 class CategoreyItemsGridView extends StatelessWidget {
   const CategoreyItemsGridView({super.key});

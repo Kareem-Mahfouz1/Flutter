@@ -7,6 +7,7 @@ import 'package:qwik_buy/features/authentication/presentation/manager/auth_cubit
 import 'package:qwik_buy/features/authentication/presentation/views/login_view.dart';
 import 'package:qwik_buy/features/authentication/presentation/views/signup_view.dart';
 import 'package:qwik_buy/features/cart/presentation/views/cart_view.dart';
+import 'package:qwik_buy/features/explore/data/models/result/product.dart';
 import 'package:qwik_buy/features/explore/presentation/views/categorey_view.dart';
 import 'package:qwik_buy/features/explore/presentation/views/explore_view.dart';
 import 'package:qwik_buy/features/explore/presentation/views/item_details_view.dart';
@@ -108,7 +109,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kItemDetailsView,
-        builder: (context, state) => const ItemDetailsView(),
+        builder: (context, state) => ItemDetailsView(
+          product: state.extra as Product,
+        ),
       ),
       GoRoute(
         path: kCartView,

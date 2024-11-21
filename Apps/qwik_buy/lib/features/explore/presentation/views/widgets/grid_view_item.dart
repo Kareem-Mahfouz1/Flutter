@@ -17,11 +17,14 @@ class GridViewItem extends StatelessWidget {
       children: [
         AspectRatio(
             aspectRatio: .68,
-            child: CachedNetworkImage(
-              imageUrl: 'https://${product.imageUrl!}',
-              fit: BoxFit.cover,
-              progressIndicatorBuilder: (context, url, progress) =>
-                  const CustomLoadingIndicator(),
+            child: Hero(
+              tag: product.imageUrl!,
+              child: CachedNetworkImage(
+                imageUrl: 'https://${product.imageUrl!}',
+                fit: BoxFit.cover,
+                progressIndicatorBuilder: (context, url, progress) =>
+                    const CustomLoadingIndicator(),
+              ),
             )),
         Text(
           product.name!,

@@ -12,7 +12,7 @@ class CustomInfoContainer extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       height: 40,
-      width: 145,
+      width: 150,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.grey[300]!),
           borderRadius: BorderRadius.circular(30)),
