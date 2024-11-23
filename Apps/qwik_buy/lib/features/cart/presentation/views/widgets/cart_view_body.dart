@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qwik_buy/core/widgets/custom_back_button.dart';
 import 'package:qwik_buy/features/cart/presentation/views/widgets/cart_list_view_item.dart';
 import 'package:qwik_buy/features/cart/presentation/views/widgets/cart_list_view_summary.dart';
 import 'package:qwik_buy/features/cart/presentation/views/widgets/custom_cart_action_bar.dart';
@@ -15,7 +16,14 @@ class CartViewBody extends StatelessWidget {
             headerSliverBuilder: (context, innerBoxIsScrolled) {
               return [
                 const SliverToBoxAdapter(
-                  child: SizedBox(height: 30),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 30),
+                        child: CustomBackButton(),
+                      ),
+                    ],
+                  ),
                 ),
               ];
             },

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qwik_buy/constants.dart';
+import 'package:qwik_buy/core/utils/app_router.dart';
 
 import 'custom_text_search_field.dart';
 
@@ -17,9 +19,11 @@ class CustomSearchAppBar extends StatelessWidget {
           style: const ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(kPrimaryColor),
               foregroundColor: WidgetStatePropertyAll(Colors.white)),
-          onPressed: () {},
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.kCartView);
+          },
           iconSize: 26,
-          icon: const Icon(Icons.camera_alt_outlined),
+          icon: const Icon(Icons.shopping_cart_outlined),
         )
       ],
     );

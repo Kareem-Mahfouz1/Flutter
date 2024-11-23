@@ -10,10 +10,10 @@ const String columnName = 'name';
 const String columnEmail = 'email';
 const String columnPassword = 'password';
 
-class DbManager {
-  static final DbManager _instance = DbManager.internal();
-  DbManager.internal();
-  factory DbManager() => _instance;
+class UserManager {
+  static final UserManager _instance = UserManager.internal();
+  UserManager.internal();
+  factory UserManager() => _instance;
   Database? _db;
 
   Future<Database> get database async {
