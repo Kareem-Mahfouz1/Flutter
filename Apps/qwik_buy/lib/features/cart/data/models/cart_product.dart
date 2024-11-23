@@ -1,7 +1,7 @@
 class CartProduct {
   late int productId;
   late String name;
-  late String price;
+  late double price;
   late String image;
 
   CartProduct.fromMap(Map<String, dynamic> map) {

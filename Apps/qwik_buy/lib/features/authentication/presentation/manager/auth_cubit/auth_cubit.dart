@@ -5,9 +5,11 @@ import 'package:qwik_buy/features/authentication/data/repos/auth_repo.dart';
 
 part 'auth_state.dart';
 
+//TODO
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit(this.authRepo) : super(AuthInitial());
   final AuthRepo authRepo;
+  int? id;
 
   Future<void> loginUser(String email, String password) async {
     emit(LoginLoading());
@@ -17,6 +19,7 @@ class AuthCubit extends Cubit<AuthState> {
         emit(LoginFailure(errMessage: failure.errMessage));
       },
       (id) {
+        this.id = id;
         emit(LoginSuccess(id: id));
       },
     );

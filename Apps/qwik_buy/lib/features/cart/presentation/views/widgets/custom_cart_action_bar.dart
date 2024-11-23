@@ -5,7 +5,8 @@ import 'package:qwik_buy/core/widgets/custom_button.dart';
 import 'package:qwik_buy/core/widgets/faded_text.dart';
 
 class CustomCartActionBar extends StatelessWidget {
-  const CustomCartActionBar({super.key});
+  const CustomCartActionBar({super.key, required this.total});
+  final double total;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class CustomCartActionBar extends StatelessWidget {
             children: [
               const FadedText(text: 'TOTAL'),
               Text(
-                '\$1500',
+                '\$${total.toStringAsFixed(2)}',
                 style: Styles.textStyle18.copyWith(
                   fontWeight: FontWeight.bold,
                   color: kPrimaryColor,

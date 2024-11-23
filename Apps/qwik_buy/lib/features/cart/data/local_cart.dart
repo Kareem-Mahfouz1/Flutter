@@ -23,8 +23,9 @@ class CartManager {
         await db.execute('''
         create table $tableCart ( 
         $columnId integer primary key, 
+        $columnProductId integer unique not null, 
         $columnName text not null,
-        $columnPrice text not null,
+        $columnPrice float not null,
         $columnImage text not null)
       ''');
       },

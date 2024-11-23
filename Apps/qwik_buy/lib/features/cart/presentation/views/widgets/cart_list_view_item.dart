@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:qwik_buy/constants.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
+import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
 import 'package:qwik_buy/features/cart/presentation/views/widgets/cart_item_image.dart';
 
 class CartListViewItem extends StatelessWidget {
-  const CartListViewItem({super.key});
-
+  const CartListViewItem({super.key, required this.product});
+  final CartProduct product;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,36 +15,40 @@ class CartListViewItem extends StatelessWidget {
       height: 120,
       child: Row(
         children: [
-          const CartItemImage(),
+          CartItemImage(product: product),
           const SizedBox(width: 30),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Text(
-                'Tag Heuer Wristwatch',
-                style: Styles.textStyle16,
-              ),
-              Text(
-                '\$450',
-                style: Styles.textStyle16.copyWith(color: kPrimaryColor),
-              ),
-              const SizedBox(height: 10),
-              Container(
-                height: 30,
-                width: 90,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.grey[200],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  product.name,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Styles.textStyle16,
                 ),
-                child: const Center(
-                  child: Text(
-                    '2',
-                    style: Styles.textStyle14,
+                Text(
+                  '\$${product.price}',
+                  style: Styles.textStyle16.copyWith(color: kPrimaryColor),
+                ),
+                const SizedBox(height: 10),
+                Container(
+                  height: 30,
+                  width: 90,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5),
+                    color: Colors.grey[200],
                   ),
-                ),
-              )
-            ],
+                  child: const Center(
+                    child: Text(
+                      '1',
+                      style: Styles.textStyle14,
+                    ),
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),
