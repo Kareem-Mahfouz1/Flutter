@@ -17,6 +17,7 @@ import 'package:qwik_buy/features/explore/presentation/manager/products_by_catig
 import 'package:qwik_buy/features/explore/presentation/views/categorey_view.dart';
 import 'package:qwik_buy/features/explore/presentation/views/explore_view.dart';
 import 'package:qwik_buy/features/explore/presentation/views/item_details_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/splash/views/splash_view.dart';
 
@@ -139,8 +140,9 @@ abstract class AppRouter {
       GoRoute(
         path: kCartView,
         builder: (context, state) {
-          //TODO
-          BlocProvider.of<CartCubit>(context).getCartItems(userId: 1);
+          final prefs = getIt.get<SharedPreferences>();
+          BlocProvider.of<CartCubit>(context)
+              .getCartItems(userId: prefs.getInt('id')!);
           return const CartView();
         },
       ),

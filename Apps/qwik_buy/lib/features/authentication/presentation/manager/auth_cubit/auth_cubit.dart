@@ -1,15 +1,15 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qwik_buy/core/utils/service_locator.dart';
 import 'package:qwik_buy/features/authentication/data/models/user.dart';
 import 'package:qwik_buy/features/authentication/data/repos/auth_repo.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_state.dart';
 
-//TODO
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit(this.authRepo) : super(AuthInitial());
   final AuthRepo authRepo;
-  int? id;
 
   Future<void> loginUser(String email, String password) async {
     emit(LoginLoading());
@@ -18,8 +18,9 @@ class AuthCubit extends Cubit<AuthState> {
       (failure) {
         emit(LoginFailure(errMessage: failure.errMessage));
       },
-      (id) {
-        this.id = id;
+      (id) async {
+        final prefs = getIt.get<SharedPreferences>();
+        prefs.setInt('id', id);
         emit(LoginSuccess(id: id));
       },
     );

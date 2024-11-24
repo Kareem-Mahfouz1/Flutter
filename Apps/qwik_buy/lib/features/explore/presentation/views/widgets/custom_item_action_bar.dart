@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qwik_buy/constants.dart';
+import 'package:qwik_buy/core/utils/service_locator.dart';
 import 'package:qwik_buy/core/utils/styles.dart';
 import 'package:qwik_buy/core/widgets/custom_button.dart';
 import 'package:qwik_buy/core/widgets/faded_text.dart';
 import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
 import 'package:qwik_buy/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
 import 'package:qwik_buy/features/explore/data/models/result/product.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomItemActionBar extends StatelessWidget {
   const CustomItemActionBar({super.key, required this.product});
@@ -50,7 +52,7 @@ class CustomItemActionBar extends StatelessWidget {
                 text: 'ADD',
                 onPressed: () {
                   BlocProvider.of<CartCubit>(context).addToCart(
-                      userId: 1,
+                      userId: getIt.get<SharedPreferences>().getInt('id')!,
                       product: CartProduct.fromMap({
                         'product_id': product.id!,
                         'name': product.name!,

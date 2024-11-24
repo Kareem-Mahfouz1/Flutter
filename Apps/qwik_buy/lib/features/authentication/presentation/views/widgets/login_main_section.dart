@@ -17,11 +17,6 @@ class LoginMainSection extends StatelessWidget {
   static final TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    //TODO
-    //ONLY FOR TESTING
-    email.text = 'someone@example.com';
-    password.text = '123456789';
-    //ONLY FOR TESTING
     return Material(
       color: Colors.white,
       elevation: 3,
