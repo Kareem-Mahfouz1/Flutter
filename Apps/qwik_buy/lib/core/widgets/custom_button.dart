@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
+import '../../constants.dart';
+import '../utils/styles.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;

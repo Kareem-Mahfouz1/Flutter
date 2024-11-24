@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/app_router.dart';
-import 'package:qwik_buy/features/explore/data/models/result/product.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/grid_view_item.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../data/models/result/product.dart';
+import 'grid_view_item.dart';
 
 class CategoreyItemsGridView extends StatelessWidget {
   const CategoreyItemsGridView({super.key, this.products});

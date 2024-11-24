@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/features/explore/data/models/result/result.dart';
-import 'package:qwik_buy/features/explore/data/repos/explore_repo.dart';
+import '../../../data/models/result/result.dart';
+import '../../../data/repos/explore_repo.dart';
 
 part 'fresh_drops_state.dart';
 

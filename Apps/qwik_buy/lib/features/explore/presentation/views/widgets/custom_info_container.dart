@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
+import '../../../../../core/utils/styles.dart';
 
 class CustomInfoContainer extends StatelessWidget {
   const CustomInfoContainer(

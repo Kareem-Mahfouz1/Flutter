@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:path/path.dart';
-import 'package:qwik_buy/core/errors/failure.dart';
-import 'package:qwik_buy/features/authentication/data/models/user.dart';
+import '../../../core/errors/failure.dart';
+import 'models/user.dart';
 import 'package:sqflite/sqflite.dart';
 
 const String tableUsers = 'users';

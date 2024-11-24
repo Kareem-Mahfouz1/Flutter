@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/service_locator.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/core/widgets/custom_button.dart';
-import 'package:qwik_buy/core/widgets/faded_text.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
-import 'package:qwik_buy/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:qwik_buy/features/explore/data/models/result/product.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/service_locator.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/faded_text.dart';
+import '../../../../cart/data/models/cart_product.dart';
+import '../../../../cart/presentation/manager/cart_cubit/cart_cubit.dart';
+import '../../../data/models/result/product.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CustomItemActionBar extends StatelessWidget {

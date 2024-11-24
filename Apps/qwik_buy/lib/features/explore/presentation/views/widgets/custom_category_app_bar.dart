@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/core/widgets/custom_back_button.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_back_button.dart';
 
 class CustomCategoryAppBar extends StatelessWidget {
   const CustomCategoryAppBar({super.key, required this.title});

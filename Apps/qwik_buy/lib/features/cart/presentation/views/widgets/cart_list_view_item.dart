@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
-import 'package:qwik_buy/features/cart/presentation/views/widgets/cart_item_image.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../data/models/cart_product.dart';
+import 'cart_item_image.dart';
 
 class CartListViewItem extends StatelessWidget {
   const CartListViewItem({super.key, required this.product});

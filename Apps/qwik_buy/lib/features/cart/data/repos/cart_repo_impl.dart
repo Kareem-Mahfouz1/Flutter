@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:qwik_buy/core/errors/failure.dart';
-import 'package:qwik_buy/features/cart/data/local_cart.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
-import 'package:qwik_buy/features/cart/data/repos/cart_repo.dart';
+import '../../../../core/errors/failure.dart';
+import '../local_cart.dart';
+import '../models/cart_product.dart';
+import 'cart_repo.dart';
 
 class CartRepoImpl implements CartRepo {
   @override

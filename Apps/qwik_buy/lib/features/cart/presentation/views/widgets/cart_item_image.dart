@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/core/widgets/custom_loading_indicator.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
+import '../../../data/models/cart_product.dart';
 
 class CartItemImage extends StatelessWidget {
   const CartItemImage({super.key, required this.product});

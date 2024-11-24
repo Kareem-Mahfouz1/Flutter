@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:qwik_buy/core/utils/app_router.dart';
-import 'package:qwik_buy/features/explore/data/models/result/product.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/grid_view_item.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../data/models/result/product.dart';
+import 'grid_view_item.dart';
 
 class NewestItemsGridView extends StatelessWidget {
   const NewestItemsGridView({super.key, required this.products});

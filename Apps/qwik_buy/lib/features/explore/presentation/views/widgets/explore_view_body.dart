@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/core/widgets/custom_error_widget.dart';
-import 'package:qwik_buy/core/widgets/custom_loading_indicator.dart';
-import 'package:qwik_buy/core/widgets/custom_text_button.dart';
-import 'package:qwik_buy/features/explore/presentation/manager/fresh_drops_cubit/fresh_drops_cubit.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/categories_list_view.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
+import '../../../../../core/widgets/custom_text_button.dart';
+import '../../manager/fresh_drops_cubit/fresh_drops_cubit.dart';
+import 'categories_list_view.dart';
 
 import 'newest_items_grid_view.dart';
 import 'custom_search_app_bar.dart';

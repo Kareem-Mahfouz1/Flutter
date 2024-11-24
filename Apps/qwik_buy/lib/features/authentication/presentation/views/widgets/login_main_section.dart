@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/core/widgets/custom_button.dart';
-import 'package:qwik_buy/core/widgets/custom_text_button.dart';
-import 'package:qwik_buy/core/widgets/faded_text.dart';
-import 'package:qwik_buy/features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_text_button.dart';
+import '../../../../../core/widgets/faded_text.dart';
+import '../../manager/auth_cubit/auth_cubit.dart';
 
 import '../../../../../core/functions/text_field_borders.dart';
 import 'welcome_row.dart';

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/core/widgets/custom_back_button.dart';
-import 'package:qwik_buy/core/widgets/custom_loading_indicator.dart';
+import '../../../../../core/widgets/custom_back_button.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({super.key, required this.image});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:qwik_buy/core/utils/app_router.dart';
-import 'package:qwik_buy/core/widgets/custom_text_button.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/widgets/custom_text_button.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';

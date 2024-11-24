@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../data/models/cart_product.dart';
 
 double calculateTotal(List<CartProduct> products) {
   double total = 0;

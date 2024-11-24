@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/core/widgets/custom_button.dart';
-import 'package:qwik_buy/core/widgets/faded_text.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/faded_text.dart';
 
 class CustomCartActionBar extends StatelessWidget {
   const CustomCartActionBar({super.key, required this.total});

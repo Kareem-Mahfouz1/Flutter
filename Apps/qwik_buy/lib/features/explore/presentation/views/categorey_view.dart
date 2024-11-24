@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/features/explore/data/models/categories/child.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/categorey_view_body.dart';
+import '../../data/models/categories/child.dart';
+import 'widgets/categorey_view_body.dart';
 
 class CategoreyView extends StatelessWidget {
   const CategoreyView({super.key, required this.brand});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
+import '../../constants.dart';
 
 class CustomLoadingIndicator extends StatelessWidget {
   const CustomLoadingIndicator({super.key});

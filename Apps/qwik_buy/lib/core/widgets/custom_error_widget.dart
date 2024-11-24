@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
+import '../utils/styles.dart';
 
 class CustomErrorWidget extends StatelessWidget {
   final String errMessage;

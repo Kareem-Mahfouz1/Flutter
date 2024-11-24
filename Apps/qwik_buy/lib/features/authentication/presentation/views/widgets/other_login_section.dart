@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/core/utils/assets.dart';
+import '../../../../../core/utils/assets.dart';
 
 import 'other_login_button.dart';
 

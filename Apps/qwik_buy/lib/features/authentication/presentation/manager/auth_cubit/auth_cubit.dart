@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/core/utils/service_locator.dart';
-import 'package:qwik_buy/features/authentication/data/models/user.dart';
-import 'package:qwik_buy/features/authentication/data/repos/auth_repo.dart';
+import '../../../../../core/utils/service_locator.dart';
+import '../../../data/models/user.dart';
+import '../../../data/repos/auth_repo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'auth_state.dart';

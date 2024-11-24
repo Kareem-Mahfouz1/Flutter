@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
-import 'package:qwik_buy/features/authentication/presentation/manager/auth_cubit/auth_cubit.dart';
+import '../manager/auth_cubit/auth_cubit.dart';
 
 import 'widgets/signup_view_body.dart';
 

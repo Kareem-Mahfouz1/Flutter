@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/core/utils/styles.dart';
-import 'package:qwik_buy/core/widgets/custom_loading_indicator.dart';
-import 'package:qwik_buy/core/widgets/faded_text.dart';
-import 'package:qwik_buy/features/explore/data/models/result/product.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
+import '../../../../../core/widgets/faded_text.dart';
+import '../../../data/models/result/product.dart';
 
 class GridViewItem extends StatelessWidget {
   const GridViewItem({super.key, required this.product});

@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:qwik_buy/features/explore/data/models/categories/link.dart';
+import 'link.dart';
 
 import 'content.dart';
 import 'display.dart';

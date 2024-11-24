@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:qwik_buy/core/errors/failure.dart';
-import 'package:qwik_buy/core/utils/web_service.dart';
-import 'package:qwik_buy/features/explore/data/models/categories/categories.dart';
-import 'package:qwik_buy/features/explore/data/models/result/result.dart';
-import 'package:qwik_buy/features/explore/data/repos/explore_repo.dart';
+import '../../../../core/errors/failure.dart';
+import '../../../../core/utils/web_service.dart';
+import '../models/categories/categories.dart';
+import '../models/result/result.dart';
+import 'explore_repo.dart';
 
 class ExploreRepoImpl implements ExploreRepo {
   final WebService webService;

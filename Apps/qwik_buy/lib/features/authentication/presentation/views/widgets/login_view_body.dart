@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
+import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
 import 'login_main_section.dart';
 import 'other_login_section.dart';

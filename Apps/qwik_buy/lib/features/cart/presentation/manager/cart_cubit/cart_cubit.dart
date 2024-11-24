@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
-import 'package:qwik_buy/features/cart/data/repos/cart_repo.dart';
+import '../../../data/models/cart_product.dart';
+import '../../../data/repos/cart_repo.dart';
 
 part 'cart_state.dart';
 

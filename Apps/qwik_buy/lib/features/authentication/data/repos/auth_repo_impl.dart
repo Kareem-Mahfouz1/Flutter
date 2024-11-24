@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:qwik_buy/core/errors/failure.dart';
-import 'package:qwik_buy/features/authentication/data/local_users.dart';
-import 'package:qwik_buy/features/authentication/data/models/user.dart';
-import 'package:qwik_buy/features/authentication/data/repos/auth_repo.dart';
+import '../../../../core/errors/failure.dart';
+import '../local_users.dart';
+import '../models/user.dart';
+import 'auth_repo.dart';
 
 class AuthRepoImpl implements AuthRepo {
   UserManager manager = UserManager();

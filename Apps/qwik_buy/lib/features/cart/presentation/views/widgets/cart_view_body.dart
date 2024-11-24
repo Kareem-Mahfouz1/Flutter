@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:qwik_buy/core/widgets/custom_back_button.dart';
-import 'package:qwik_buy/core/widgets/custom_error_widget.dart';
-import 'package:qwik_buy/core/widgets/custom_loading_indicator.dart';
-import 'package:qwik_buy/features/cart/data/models/cart_product.dart';
-import 'package:qwik_buy/features/cart/presentation/manager/cart_cubit/cart_cubit.dart';
-import 'package:qwik_buy/features/cart/presentation/views/widgets/cart_list_view_item.dart';
-import 'package:qwik_buy/features/cart/presentation/views/widgets/cart_list_view_summary.dart';
-import 'package:qwik_buy/features/cart/presentation/views/widgets/custom_cart_action_bar.dart';
+import '../../../../../core/widgets/custom_back_button.dart';
+import '../../../../../core/widgets/custom_error_widget.dart';
+import '../../../../../core/widgets/custom_loading_indicator.dart';
+import '../../../data/models/cart_product.dart';
+import '../../manager/cart_cubit/cart_cubit.dart';
+import 'cart_list_view_item.dart';
+import 'cart_list_view_summary.dart';
+import 'custom_cart_action_bar.dart';
 
 double calculateTotal(List<CartProduct> products) {
   double total = 0;

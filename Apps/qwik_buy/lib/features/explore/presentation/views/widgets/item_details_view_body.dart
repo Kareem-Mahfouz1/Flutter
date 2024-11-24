@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:qwik_buy/constants.dart';
-import 'package:qwik_buy/features/explore/data/models/result/product.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/custom_item_action_bar.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/custom_sliver_app_bar.dart';
-import 'package:qwik_buy/features/explore/presentation/views/widgets/item_details_main_section.dart';
+import '../../../../../constants.dart';
+import '../../../data/models/result/product.dart';
+import 'custom_item_action_bar.dart';
+import 'custom_sliver_app_bar.dart';
+import 'item_details_main_section.dart';
 
 class ItemDetailsViewBody extends StatelessWidget {
   const ItemDetailsViewBody({super.key, required this.product});
