@@ -34,7 +34,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kAddGoalView,
-        builder: (context, state) => const AddGoalView(),
+        builder: (context, state) => AddGoalView(user: state.extra as User),
       ),
       GoRoute(
         path: kLoginView,
@@ -56,9 +56,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kHomeView,
-        builder: (context, state) => HomeView(
-          user: state.extra as User,
-        ),
+        builder: (context, state) => HomeView(user: state.extra as User),
       ),
       GoRoute(
         path: kBalanceUpdateView,

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:gdg_hackathon/core/models/user.dart';
 import 'package:gdg_hackathon/features/auth/data/models/user_signup.dart';
 import 'package:gdg_hackathon/features/auth/data/repos/signup_repo.dart';
 import 'package:get_storage/get_storage.dart';
@@ -25,7 +26,7 @@ class SignupCubit extends Cubit<SignupState> {
         final String id = JwtDecoder.decode(token)['id'];
         box.write('user_id', id);
         box.write('access_token', token);
-        emit(SignupSuccess());
+        emit(SignupSuccess(user: User.fromJson(r['newUser'])));
       },
     );
   }

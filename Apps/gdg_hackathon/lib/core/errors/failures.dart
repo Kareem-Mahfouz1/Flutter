@@ -42,7 +42,7 @@ class ServerFailure extends Failure {
       case 400:
       case 401:
       case 403:
-        return ServerFailure(response['errors'][0]['msg']);
+        return ServerFailure(response);
       case 404:
         return ServerFailure(
             'Your request is not found,please try again later!');

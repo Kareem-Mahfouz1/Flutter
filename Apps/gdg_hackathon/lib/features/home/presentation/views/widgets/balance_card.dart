@@ -74,7 +74,7 @@ class BalanceCard extends StatelessWidget {
                 ),
                 const GradientCircularProgressIndicator(
                   size: 60,
-                  progress: 0.40, // Specify the progress value between 0 and 1
+                  progress: 0.40,
                   gradient: LinearGradient(
                     colors: [
                       Color.fromRGBO(144, 60, 184, 0.5),

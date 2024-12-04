@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gdg_hackathon/constants.dart';
 import 'package:gdg_hackathon/core/models/user.dart';
 import 'package:gdg_hackathon/core/utils/app_router.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/goals_body.dart';
+import 'package:gdg_hackathon/features/home/presentation/views/widgets/goals_body.dart';
 import 'package:gdg_hackathon/features/home/presentation/views/widgets/home_body.dart';
 import 'package:go_router/go_router.dart';
 
@@ -22,13 +22,15 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       floatingActionButton: selectedIndex == 2
           ? FloatingActionButton(
+              shape: const CircleBorder(),
               backgroundColor: kPrimaryColor,
               onPressed: () {
-                GoRouter.of(context).push(AppRouter.kAddGoalView);
+                GoRouter.of(context)
+                    .push(AppRouter.kAddGoalView, extra: widget.user);
               },
               child: const Icon(
                 Icons.add,
-                color: Colors.grey,
+                color: Colors.white,
               ),
             )
           : null,
@@ -36,7 +38,7 @@ class _HomeViewState extends State<HomeView> {
           child: [
         HomeBody(user: widget.user),
         HomeBody(user: widget.user),
-        const GoalsBody(),
+        GoalsBody(user: widget.user),
         HomeBody(user: widget.user),
       ][selectedIndex]),
       bottomNavigationBar: NavigationBar(

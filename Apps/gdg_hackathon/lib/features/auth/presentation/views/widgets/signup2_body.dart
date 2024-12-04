@@ -68,13 +68,13 @@ class Signup2Body extends StatelessWidget {
                   const Spacer(),
                   BlocConsumer<SignupCubit, SignupState>(
                     listener: (context, state) {
-                      if (state is LoginSuccess) {
-                        GoRouter.of(context).push(AppRouter.kVerificationView,
-                            extra: user.emailAddress);
+                      if (state is SignupSuccess) {
+                        GoRouter.of(context)
+                            .push(AppRouter.kHomeView, extra: state.user);
                       } else if (state is SignupFailure) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("state.errMessage"),
+                          SnackBar(
+                            content: Text(state.errMessage),
                           ),
                         );
                       }
@@ -119,7 +119,7 @@ class Signup2Body extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          GoRouter.of(context).pop();
+                          GoRouter.of(context).go(AppRouter.kLoginView);
                         },
                         child: Text(
                           'LogIn',

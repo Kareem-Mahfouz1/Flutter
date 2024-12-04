@@ -8,4 +8,5 @@ class MyAssets {
   static const amanImg = "assets/images/aman_img.png";
   static const logo = "assets/images/logo.png";
   static const logo2 = "assets/images/logo2.png";
+  static const addGoalImg = "assets/images/add_goal_img.png";
 }

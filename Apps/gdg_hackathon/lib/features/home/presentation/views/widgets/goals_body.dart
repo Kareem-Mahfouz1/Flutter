@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gdg_hackathon/constants.dart';
+import 'package:gdg_hackathon/core/models/user.dart';
 import 'package:gdg_hackathon/core/utils/styles.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/goals_item.dart';
+import 'package:gdg_hackathon/features/home/presentation/views/widgets/goals_item.dart';
 
 class GoalsBody extends StatelessWidget {
-  const GoalsBody({super.key});
+  const GoalsBody({super.key, required this.user});
+  final User user;
 
   @override
   Widget build(BuildContext context) {

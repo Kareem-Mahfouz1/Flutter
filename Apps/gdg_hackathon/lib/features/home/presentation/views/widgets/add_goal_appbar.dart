@@ -10,10 +10,14 @@ class AddGoalAppbar extends StatelessWidget {
     return Row(
       children: [
         const CustomBackButton(),
-        Text(
-          'Add Goal',
-          style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w500),
-        )
+        const Spacer(flex: 2),
+        Center(
+          child: Text(
+            'Add Goal',
+            style: Styles.textStyle20.copyWith(fontWeight: FontWeight.w500),
+          ),
+        ),
+        const Spacer(flex: 3)
       ],
     );
   }
