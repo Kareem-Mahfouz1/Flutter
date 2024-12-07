@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
+import '../../../../../core/utils/styles.dart';
 
 class OtherLoginSignup extends StatelessWidget {
   const OtherLoginSignup({super.key, required this.text});

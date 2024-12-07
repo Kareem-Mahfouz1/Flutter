@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/core/utils/app_router.dart';
-import 'package:gdg_hackathon/core/utils/assets.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/balance_card.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/home_appbar.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/investment_partners_list_view.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/quick_action_item.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/models/user.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../core/utils/styles.dart';
+import 'balance_card.dart';
+import 'home_appbar.dart';
+import 'investment_partners_list_view.dart';
+import 'quick_action_item.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeBody extends StatelessWidget {

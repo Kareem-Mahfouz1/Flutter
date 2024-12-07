@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gdg_hackathon/features/auth/data/models/user_signup.dart';
-import 'package:gdg_hackathon/features/auth/data/repos/signup_repo.dart';
-import 'package:gdg_hackathon/features/auth/presentation/cubits/signup_cubit/signup_cubit.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/signup2_body.dart';
+import '../../data/models/user_signup.dart';
+import '../../data/repos/signup_repo.dart';
+import '../cubits/signup_cubit/signup_cubit.dart';
+import 'widgets/signup2_body.dart';
 
 class Signup2View extends StatelessWidget {
   const Signup2View({super.key, required this.user});

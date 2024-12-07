@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/history_appbar.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/history_item.dart';
+import '../../../../../constants.dart';
+import 'history_appbar.dart';
+import 'history_item.dart';
 
 class HistoryBody extends StatelessWidget {
   const HistoryBody({super.key});

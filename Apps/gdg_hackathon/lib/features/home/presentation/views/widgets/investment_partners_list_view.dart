@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/utils/assets.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/investment_item.dart';
+import '../../../../../core/utils/assets.dart';
+import 'investment_item.dart';
 
 class InvestmentPartnersListView extends StatelessWidget {
   const InvestmentPartnersListView({super.key});

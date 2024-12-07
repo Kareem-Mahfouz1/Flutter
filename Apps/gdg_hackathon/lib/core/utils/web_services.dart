@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:gdg_hackathon/core/errors/failures.dart';
-import 'package:gdg_hackathon/features/auth/data/models/user_signup.dart';
+import '../errors/failures.dart';
+import '../../features/auth/data/models/user_signup.dart';
 import 'package:get_storage/get_storage.dart';
 
 class WebService {
@@ -16,13 +16,36 @@ class WebService {
     return response.data;
   }
 
-  Future<Map<String, dynamic>> getUser() async {
-    final Dio dio = Dio(BaseOptions(
-      baseUrl: baseUrl,
-      headers: {'Authorization': 'Bearer ${box.read('access_token')}'},
-    ));
-    var response = await dio.get('/users/${box.read('user_id')}');
-    return response.data;
+  Future<Either<Failure, Map<String, dynamic>>> updateBalance(
+      {required int addedBalance}) async {
+    try {
+      final Dio dio = Dio(BaseOptions(
+        baseUrl: baseUrl,
+        headers: {'Authorization': 'Bearer ${box.read('access_token')}'},
+      ));
+      var response = await dio.post(
+        '/users/update-balance',
+        data: {
+          "addedBalance": addedBalance,
+        },
+      );
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioException(e));
+    }
+  }
+
+  Future<Either<Failure, Map<String, dynamic>>> getUser() async {
+    try {
+      final Dio dio = Dio(BaseOptions(
+        baseUrl: baseUrl,
+        headers: {'Authorization': 'Bearer ${box.read('access_token')}'},
+      ));
+      var response = await dio.get('/users/${box.read('user_id')}');
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(ServerFailure.fromDioException(e));
+    }
   }
 
   Future<Either<Failure, Map<String, dynamic>>> login(
@@ -37,8 +60,6 @@ class WebService {
       );
       return Right(response.data);
     } on DioException catch (e) {
-      print(e.message);
-      print(e.error.toString());
       return Left(ServerFailure.fromDioException(e));
     }
   }
@@ -52,8 +73,6 @@ class WebService {
       );
       return Right(response.data);
     } on DioException catch (e) {
-      print(e.message);
-      print(e.error.toString());
       return Left(ServerFailure.fromDioException(e));
     }
   }

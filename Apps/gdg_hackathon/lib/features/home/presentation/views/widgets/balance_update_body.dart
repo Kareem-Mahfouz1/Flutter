@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/functions/input_validation.dart';
-import 'package:gdg_hackathon/core/widgets/custom_button.dart';
-import 'package:gdg_hackathon/core/widgets/custom_text_field.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/balance_appbar.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/functions/input_validation.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
+import '../../cubits/balance_cubit/balance_cubit.dart';
+import 'balance_appbar.dart';
+import 'package:go_router/go_router.dart';
 
 class BalanceUpdateBody extends StatelessWidget {
   const BalanceUpdateBody({super.key});
@@ -28,9 +32,31 @@ class BalanceUpdateBody extends StatelessWidget {
             SizedBox(
               height: 57,
               width: double.infinity,
-              child: CustomButton(
-                text: 'Save',
-                onPressed: () {},
+              child: BlocConsumer<BalanceCubit, BalanceState>(
+                listener: (context, state) {
+                  if (state is BalanceSuccess) {
+                    GoRouter.of(context).go(AppRouter.kHomeView);
+                  } else if (state is BalanceFailure) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(state.errMessage),
+                      ),
+                    );
+                  }
+                },
+                builder: (context, state) {
+                  return state is BalanceLoading
+                      ? const Center(child: CircularProgressIndicator())
+                      : CustomButton(
+                          text: 'Save',
+                          onPressed: () {
+                            BlocProvider.of<BalanceCubit>(context)
+                                .updateBalance(
+                              addedBalance: int.parse(newBalance.text),
+                            );
+                          },
+                        );
+                },
               ),
             )
           ],

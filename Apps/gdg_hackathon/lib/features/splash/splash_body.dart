@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/utils/app_router.dart';
-import 'package:gdg_hackathon/core/utils/assets.dart';
+import '../../core/utils/app_router.dart';
+import '../../core/utils/assets.dart';
 import 'package:go_router/go_router.dart';
 
 class SplashBody extends StatefulWidget {

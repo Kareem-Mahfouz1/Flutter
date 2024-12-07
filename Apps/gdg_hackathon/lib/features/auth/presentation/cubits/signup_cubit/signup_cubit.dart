@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/features/auth/data/models/user_signup.dart';
-import 'package:gdg_hackathon/features/auth/data/repos/signup_repo.dart';
+import '../../../../../core/models/user.dart';
+import '../../../data/models/user_signup.dart';
+import '../../../data/repos/signup_repo.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 // import 'package:shared_preferences/shared_preferences.dart';

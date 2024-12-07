@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class GoalsItem extends StatelessWidget {

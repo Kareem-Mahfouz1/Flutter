@@ -1,15 +1,18 @@
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/features/auth/data/models/user_signup.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/login_view.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/on_boarding_view.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/signup2_view.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/signup_view.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/verification_view.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/add_goal_view.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/balance_update_view.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/history_view.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/home_view.dart';
-import 'package:gdg_hackathon/features/splash/splash_view.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../models/user.dart';
+import '../../features/auth/data/models/user_signup.dart';
+import '../../features/auth/presentation/views/login_view.dart';
+import '../../features/auth/presentation/views/on_boarding_view.dart';
+import '../../features/auth/presentation/views/signup2_view.dart';
+import '../../features/auth/presentation/views/signup_view.dart';
+import '../../features/auth/presentation/views/verification_view.dart';
+import '../../features/home/data/repos/user_repo.dart';
+import '../../features/home/presentation/cubits/user_cubit/user_cubit.dart';
+import '../../features/home/presentation/views/add_goal_view.dart';
+import '../../features/home/presentation/views/balance_update_view.dart';
+import '../../features/home/presentation/views/history_view.dart';
+import '../../features/home/presentation/views/home_view.dart';
+import '../../features/splash/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -56,7 +59,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kHomeView,
-        builder: (context, state) => HomeView(user: state.extra as User),
+        builder: (context, state) => BlocProvider(
+          create: (context) => UserCubit(UserRepo())..getUser(),
+          child: const HomeView(),
+        ),
       ),
       GoRoute(
         path: kBalanceUpdateView,

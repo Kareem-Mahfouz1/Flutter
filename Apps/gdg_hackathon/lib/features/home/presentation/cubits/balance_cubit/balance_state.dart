@@ -7,11 +7,7 @@ final class BalanceInitial extends BalanceState {}
 
 final class BalanceLoading extends BalanceState {}
 
-final class BalanceSuccess extends BalanceState {
-  final int balance;
-
-  BalanceSuccess({required this.balance});
-}
+final class BalanceSuccess extends BalanceState {}
 
 final class BalanceFailure extends BalanceState {
   final String errMessage;

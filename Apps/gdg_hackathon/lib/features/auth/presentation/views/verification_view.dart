@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/verification_body.dart';
+import 'widgets/verification_body.dart';
 
 class VerificationView extends StatelessWidget {
   const VerificationView({super.key, required this.email});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
-import 'package:gdg_hackathon/core/widgets/custom_back_button.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_back_button.dart';
 
 class AddGoalAppbar extends StatelessWidget {
   const AddGoalAppbar({super.key});

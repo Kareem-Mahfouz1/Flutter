@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
 
 class InvestmentItem extends StatelessWidget {
   const InvestmentItem(

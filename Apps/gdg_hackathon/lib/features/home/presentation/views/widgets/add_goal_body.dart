@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/functions/input_validation.dart';
-import 'package:gdg_hackathon/core/models/goal.dart';
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/core/utils/assets.dart';
-import 'package:gdg_hackathon/core/widgets/custom_button.dart';
-import 'package:gdg_hackathon/core/widgets/custom_text_field.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/add_goal_appbar.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/functions/input_validation.dart';
+import '../../../../../core/models/goal.dart';
+import '../../../../../core/models/user.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
+import 'add_goal_appbar.dart';
 import 'package:go_router/go_router.dart';
 
 class AddGoalBody extends StatelessWidget {

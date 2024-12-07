@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
+import '../../../../../core/utils/styles.dart';
 
 class BudgetBody extends StatelessWidget {
   const BudgetBody({super.key});

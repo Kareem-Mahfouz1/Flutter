@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/functions/input_validation.dart';
-import 'package:gdg_hackathon/core/utils/app_router.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
-import 'package:gdg_hackathon/core/widgets/custom_button.dart';
-import 'package:gdg_hackathon/core/widgets/custom_text_field.dart';
-import 'package:gdg_hackathon/features/auth/data/models/user_signup.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/other_login_signup.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/signup_header.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/functions/input_validation.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
+import '../../../data/models/user_signup.dart';
+import 'other_login_signup.dart';
+import 'signup_header.dart';
 import 'package:go_router/go_router.dart';
 
 class SignupBody extends StatelessWidget {

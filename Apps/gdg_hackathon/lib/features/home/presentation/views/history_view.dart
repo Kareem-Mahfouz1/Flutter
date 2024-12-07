@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/history_body.dart';
+import 'widgets/history_body.dart';
 
 class HistoryView extends StatelessWidget {
   const HistoryView({super.key});

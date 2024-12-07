@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/utils/assets.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
+import '../../../../../core/utils/assets.dart';
+import '../../../../../core/utils/styles.dart';
 
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({super.key, required this.name});

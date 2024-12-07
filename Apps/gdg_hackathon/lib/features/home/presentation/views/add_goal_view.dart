@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/add_goal_body.dart';
+import '../../../../core/models/user.dart';
+import 'widgets/add_goal_body.dart';
 
 class AddGoalView extends StatelessWidget {
   const AddGoalView({super.key, required this.user});

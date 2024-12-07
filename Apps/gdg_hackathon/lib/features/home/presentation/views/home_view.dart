@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/core/utils/app_router.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/goals_body.dart';
-import 'package:gdg_hackathon/features/home/presentation/views/widgets/home_body.dart';
-import 'package:go_router/go_router.dart';
+import '../../../../constants.dart';
+import '../cubits/user_cubit/user_cubit.dart';
+import 'widgets/goals_body.dart';
+import 'widgets/home_body.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({super.key, required this.user});
-  final User user;
+  const HomeView({super.key});
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -20,27 +18,24 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: selectedIndex == 2
-          ? FloatingActionButton(
-              shape: const CircleBorder(),
-              backgroundColor: kPrimaryColor,
-              onPressed: () {
-                GoRouter.of(context)
-                    .push(AppRouter.kAddGoalView, extra: widget.user);
-              },
-              child: const Icon(
-                Icons.add,
-                color: Colors.white,
-              ),
-            )
-          : null,
-      body: SafeArea(
-          child: [
-        HomeBody(user: widget.user),
-        HomeBody(user: widget.user),
-        GoalsBody(user: widget.user),
-        HomeBody(user: widget.user),
-      ][selectedIndex]),
+      body: BlocBuilder<UserCubit, UserState>(
+        builder: (context, state) {
+          if (state is UserSuccess) {
+            return SafeArea(
+              child: [
+                HomeBody(user: state.user),
+                HomeBody(user: state.user),
+                GoalsBody(user: state.user),
+                HomeBody(user: state.user),
+              ][selectedIndex],
+            );
+          } else if (state is UserFailure) {
+            return Text(state.errMessage);
+          } else {
+            return const Center(child: CircularProgressIndicator());
+          }
+        },
+      ),
       bottomNavigationBar: NavigationBar(
         indicatorColor: Colors.transparent,
         selectedIndex: selectedIndex,

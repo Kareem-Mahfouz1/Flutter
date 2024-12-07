@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:gdg_hackathon/core/models/user.dart';
-import 'package:gdg_hackathon/features/auth/data/repos/login_repo.dart';
+import '../../../data/repos/login_repo.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:meta/meta.dart';
@@ -25,8 +24,7 @@ class LoginCubit extends Cubit<LoginState> {
         final String id = JwtDecoder.decode(token)['id'];
         box.write('user_id', id);
         box.write('access_token', token);
-        User user = User.fromJson(await loginRepo.getUser());
-        emit(LoginSuccess(user: user));
+        emit(LoginSuccess());
       },
     );
   }

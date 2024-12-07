@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gdg_hackathon/core/functions/input_border.dart';
+import '../functions/input_border.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField(

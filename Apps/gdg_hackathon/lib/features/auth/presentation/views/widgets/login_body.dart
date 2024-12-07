@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gdg_hackathon/constants.dart';
-import 'package:gdg_hackathon/core/functions/input_validation.dart';
-import 'package:gdg_hackathon/core/utils/app_router.dart';
-import 'package:gdg_hackathon/core/utils/styles.dart';
-import 'package:gdg_hackathon/core/widgets/custom_button.dart';
-import 'package:gdg_hackathon/core/widgets/custom_text_field.dart';
-import 'package:gdg_hackathon/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/login_header.dart';
-import 'package:gdg_hackathon/features/auth/presentation/views/widgets/other_login_signup.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/functions/input_validation.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/custom_button.dart';
+import '../../../../../core/widgets/custom_text_field.dart';
+import '../../cubits/login_cubit/login_cubit.dart';
+import 'login_header.dart';
+import 'other_login_signup.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginBody extends StatelessWidget {
@@ -59,12 +59,11 @@ class LoginBody extends StatelessWidget {
                   BlocConsumer<LoginCubit, LoginState>(
                     listener: (context, state) {
                       if (state is LoginSuccess) {
-                        GoRouter.of(context)
-                            .go(AppRouter.kHomeView, extra: state.user);
+                        GoRouter.of(context).go(AppRouter.kHomeView);
                       } else if (state is LoginFailure) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("state.errMessage"),
+                          SnackBar(
+                            content: Text(state.errMessage),
                           ),
                         );
                       }
@@ -81,8 +80,9 @@ class LoginBody extends StatelessWidget {
                                   if (formKey.currentState!.validate()) {
                                     BlocProvider.of<LoginCubit>(context)
                                         .loginUser(
-                                            email: email.text,
-                                            password: password.text);
+                                      email: email.text,
+                                      password: password.text,
+                                    );
                                   }
                                 },
                               ),
