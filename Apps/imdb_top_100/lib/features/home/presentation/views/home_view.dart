@@ -11,6 +11,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +20,7 @@ class _HomeViewState extends State<HomeView> {
         const SeriesBody(),
       ][selectedIndex],
       bottomNavigationBar: NavigationBar(
-        height: 60,
+        height: 65,
         backgroundColor: Theme.of(context).colorScheme.onPrimary,
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
         selectedIndex: selectedIndex,
