@@ -48,6 +48,5 @@ class SeriesDetailsBody extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

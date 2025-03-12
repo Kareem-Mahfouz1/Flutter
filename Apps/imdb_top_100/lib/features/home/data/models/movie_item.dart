@@ -6,7 +6,7 @@ class MovieItem extends Equatable {
   final String? description;
   final String? image;
   final String? bigImage;
-  final List<String>? genre;
+  final List<dynamic>? genre;
   final String? thumbnail;
   final String? rating;
   final String? id;
@@ -35,7 +35,7 @@ class MovieItem extends Equatable {
         description: json['description'] as String?,
         image: json['image'] as String?,
         bigImage: json['big_image'] as String?,
-        genre: json['genre'] as List<String>?,
+        genre: json['genre'],
         thumbnail: json['thumbnail'] as String?,
         rating: json['rating'] as String?,
         id: json['id'] as String?,

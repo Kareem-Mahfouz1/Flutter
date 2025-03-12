@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:imdb_top_100/core/utils/service_locator.dart';
 import 'package:imdb_top_100/core/utils/themes.dart';
-import 'package:imdb_top_100/features/home/presentation/views/home_view.dart';
+import 'package:imdb_top_100/features/splash/splash_view.dart';
 
-void main() {
+void main() async {
+  setupServiceLocator();
+  await dotenv.load();
   runApp(const MyApp());
 }
 
@@ -16,8 +20,7 @@ class MyApp extends StatelessWidget {
       theme: MyThemes.lightTheme,
       darkTheme: MyThemes.darkTheme,
       themeMode: ThemeMode.system,
-      // home: const SplashView(),
-      home: const HomeView(),
+      home: const SplashView(),
     );
   }
 }

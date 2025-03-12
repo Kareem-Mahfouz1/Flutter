@@ -4,7 +4,7 @@ class SeriesItem extends Equatable {
   final int? rank;
   final String? title;
   final String? thumbnail;
-  final double? rating;
+  final num? rating;
   final String? id;
   final String? year;
   final String? image;
@@ -39,7 +39,7 @@ class SeriesItem extends Equatable {
         rank: json['rank'] as int?,
         title: json['title'] as String?,
         thumbnail: json['thumbnail'] as String?,
-        rating: json['rating'] as double?,
+        rating: json['rating'] as num?,
         id: json['id'] as String?,
         year: json['year'] as String?,
         image: json['image'] as String?,
@@ -48,7 +48,7 @@ class SeriesItem extends Equatable {
         trailer: json['trailer'] as String?,
         trailerEmbedLink: json['trailer_embed_link'] as String?,
         trailerYoutubeId: json['trailer_youtube_id'] as String?,
-        genre: json['genre'] as List<String>?,
+        genre: List<String>.from(json['genre']) as List<String>?,
         imdbid: json['imdbid'] as String?,
         imdbLink: json['imdb_link'] as String?,
       );

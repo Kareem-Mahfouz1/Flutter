@@ -48,7 +48,7 @@ class SeriesDetails extends Equatable {
         trailer: json['trailer'] as String?,
         trailerEmbedLink: json['trailer_embed_link'] as String?,
         trailerYoutubeId: json['trailer_youtube_id'] as String?,
-        genre: json['genre'] as List<String>?,
+        genre: List<String>.from(json['genre']) as List<String>?,
         imdbid: json['imdbid'] as String?,
         imdbLink: json['imdb_link'] as String?,
       );

@@ -52,9 +52,9 @@ class MovieDetails extends Equatable {
         trailer: json['trailer'] as String?,
         trailerEmbedLink: json['trailer_embed_link'] as String?,
         trailerYoutubeId: json['trailer_youtube_id'] as String?,
-        genre: json['genre'] as List<String>?,
-        director: json['director'] as List<String>?,
-        writers: json['writers'] as List<String>?,
+        genre: List<String>.from(json['genre']),
+        director: List<String>.from(json['director']) as List<String>?,
+        writers: List<String>.from(json['writers']) as List<String>?,
         imdbid: json['imdbid'] as String?,
         imdbLink: json['imdb_link'] as String?,
       );
