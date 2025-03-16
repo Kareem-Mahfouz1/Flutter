@@ -21,16 +21,19 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: [
-        BlocProvider(
-          create: (context) => MoviesCubit(getIt.get<MoviesRepoImpl>()),
-          child: const MoviesPage(),
-        ),
-        BlocProvider(
-          create: (context) => SeriesCubit(getIt.get<SeriesRepoImpl>()),
-          child: const SeriesBody(),
-        ),
-      ][selectedIndex],
+      body: IndexedStack(
+        index: selectedIndex,
+        children: [
+          BlocProvider(
+            create: (context) => MoviesCubit(getIt.get<MoviesRepoImpl>()),
+            child: const MoviesPage(),
+          ),
+          BlocProvider(
+            create: (context) => SeriesCubit(getIt.get<SeriesRepoImpl>()),
+            child: const SeriesBody(),
+          ),
+        ],
+      ),
       bottomNavigationBar: NavigationBar(
         height: 65,
         backgroundColor: Theme.of(context).colorScheme.onPrimary,
